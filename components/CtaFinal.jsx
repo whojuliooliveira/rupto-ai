@@ -49,25 +49,38 @@ export default function CtaFinal() {
     return e
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
     const errs = validate()
     if (Object.keys(errs).length) { setErrors(errs); return }
     setLoading(true)
 
-    setTimeout(() => {
-      setLoading(false)
+    try {
+      await fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nome:     form.nome,
+          email:    form.email,
+          telefone: form.telefone,
+          empresa:  form.empresa,
+          tamanho:  form.equipe,
+        }),
+      })
+    } catch (_) {
+      // salva no Notion em background, não bloqueia o fluxo
+    }
 
-      if (form.equipe === 'autonomo') {
-        setResult('disqualified')
-        return
-      }
+    setLoading(false)
 
-      // Qualificado — abre WhatsApp direto
-      const msg = `Olá Julio! Acabei de preencher o formulário no site da Rupto AI e quero agendar meu Diagnóstico Gratuito.`
-      window.open(WA_BASE + encodeURIComponent(msg), '_blank', 'noopener,noreferrer')
-      setResult('qualified')
-    }, 500)
+    if (form.equipe === 'autonomo') {
+      setResult('disqualified')
+      return
+    }
+
+    const msg = `Olá Julio! Acabei de preencher o formulário no site da Rupto AI e quero agendar meu Diagnóstico Gratuito.`
+    window.open(WA_BASE + encodeURIComponent(msg), '_blank', 'noopener,noreferrer')
+    setResult('qualified')
   }
 
   /* ── Tela: desqualificado (autônomo) ── */
