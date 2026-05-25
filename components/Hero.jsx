@@ -5,7 +5,6 @@ import dynamic from 'next/dynamic'
 const HeroCanvas = dynamic(() => import('./HeroCanvas'), { ssr: false })
 
 const GRID = 48
-const WA = 'https://wa.me/5519992438604?text=Vim%20pelo%20site%20da%20Rupto.%20Quero%20o%20diagn%C3%B3stico%20gratuito.'
 
 export default function Hero() {
   const h1Ref      = useRef(null)
@@ -89,9 +88,7 @@ export default function Hero() {
 
         <div ref={ctaRef} className="fade-up-init flex flex-col items-center gap-3">
           <a
-            href={WA}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#agendar"
             className="inline-flex items-center gap-2 min-h-[44px] w-full sm:w-auto justify-center font-semibold text-sm text-white bg-[#2f80ed] px-8 py-4 hover:opacity-85 transition-opacity duration-200"
             style={{ fontFamily: '"DM Sans", sans-serif' }}
           >

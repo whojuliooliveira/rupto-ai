@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Processo from "@/components/Processo";
 import CtaFinal from "@/components/CtaFinal";
+import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -62,6 +63,7 @@ export default function Home() {
         <Hero />
         <Processo />
         <CtaFinal />
+        <Faq />
       </main>
       <Footer />
     </>

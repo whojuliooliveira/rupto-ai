@@ -1,8 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
 
-const WA = 'https://wa.me/5519992438604?text=Vim%20pelo%20site%20da%20Rupto.%20Quero%20o%20diagn%C3%B3stico%20gratuito.'
-
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
 
@@ -33,10 +31,8 @@ export default function Navbar() {
         </a>
 
         <a
-          href={WA}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Agendar diagnóstico gratuito via WhatsApp"
+          href="#agendar"
+          aria-label="Agendar diagnóstico gratuito"
           className="hidden md:inline-flex items-center min-h-[44px] border border-[#2f80ed] text-[#2f80ed] bg-transparent px-7 py-3 font-semibold text-sm hover:bg-[#2f80ed] hover:text-white transition-colors duration-200 shrink-0"
           style={{ fontFamily: '"DM Sans", sans-serif', touchAction: 'manipulation' }}
         >
