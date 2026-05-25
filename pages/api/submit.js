@@ -1,10 +1,21 @@
+const ALLOWED_TAMANHOS = ['autonomo', '2-10', '10-50', '50+']
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).end()
 
-  const { nome, email, telefone, empresa, tamanho } = req.body
+  const { nome, email, telefone, empresa, tamanho } = req.body ?? {}
 
-  if (!nome || !email || !telefone || !empresa || !tamanho) {
-    return res.status(400).json({ error: 'Campos obrigatórios faltando' })
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(email ?? '').trim())
+  const telOk   = String(telefone ?? '').replace(/\D/g, '').length >= 10
+
+  if (
+    !String(nome    ?? '').trim() ||
+    !String(empresa ?? '').trim() ||
+    !emailOk ||
+    !telOk   ||
+    !ALLOWED_TAMANHOS.includes(tamanho)
+  ) {
+    return res.status(400).json({ error: 'Dados inválidos' })
   }
 
   try {
@@ -18,24 +29,19 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         parent: { database_id: process.env.NOTION_DATABASE_ID },
         properties: {
-          Nome:     { title:       [{ text: { content: nome } }] },
-          Email:    { email:       email },
-          Telefone: { phone_number: telefone },
-          Empresa:  { rich_text:   [{ text: { content: empresa } }] },
-          Tamanho:  { select:      { name: tamanho } },
+          Nome:     { title:        [{ text: { content: String(nome).trim().slice(0, 200) } }] },
+          Email:    { email:        String(email).trim().toLowerCase().slice(0, 200) },
+          Telefone: { phone_number: String(telefone).trim().slice(0, 50) },
+          Empresa:  { rich_text:    [{ text: { content: String(empresa).trim().slice(0, 200) } }] },
+          Tamanho:  { select:       { name: tamanho } },
         },
       }),
     })
 
-    if (!response.ok) {
-      const err = await response.json()
-      console.error('Notion error:', err)
-      return res.status(500).json({ error: 'Erro ao salvar no Notion' })
-    }
+    if (!response.ok) return res.status(500).json({ error: 'Erro interno' })
 
     return res.status(200).json({ ok: true })
-  } catch (e) {
-    console.error(e)
+  } catch (_) {
     return res.status(500).json({ error: 'Erro interno' })
   }
 }
