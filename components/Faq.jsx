@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import FadeUp from './ui/FadeUp'
 
 const f    = '"DM Sans", sans-serif'
@@ -26,10 +26,27 @@ const FAQS = [
 ]
 
 function Item({ q, a, open, onToggle }) {
+  const btnRef = useRef(null)
+
+  function handleClick() {
+    if (open && btnRef.current) {
+      // ancora o botão na tela antes de fechar, evitando o salto
+      const top = btnRef.current.getBoundingClientRect().top
+      onToggle()
+      requestAnimationFrame(() => {
+        const newTop = btnRef.current?.getBoundingClientRect().top ?? top
+        window.scrollBy({ top: newTop - top, behavior: 'instant' })
+      })
+    } else {
+      onToggle()
+    }
+  }
+
   return (
     <div style={{ borderBottom: '1px solid rgba(0,0,0,0.07)' }}>
       <button
-        onClick={onToggle}
+        ref={btnRef}
+        onClick={handleClick}
         aria-expanded={open}
         style={{ width: '100%', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, padding: '20px 0', textAlign: 'left' }}
       >
