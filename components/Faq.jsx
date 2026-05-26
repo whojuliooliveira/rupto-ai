@@ -25,12 +25,11 @@ const FAQS = [
   },
 ]
 
-function Item({ q, a, defaultOpen = false }) {
-  const [open, setOpen] = useState(defaultOpen)
+function Item({ q, a, open, onToggle }) {
   return (
     <div style={{ borderBottom: '1px solid rgba(0,0,0,0.07)' }}>
       <button
-        onClick={() => setOpen(o => !o)}
+        onClick={onToggle}
         aria-expanded={open}
         style={{ width: '100%', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, padding: '20px 0', textAlign: 'left' }}
       >
@@ -53,6 +52,8 @@ function Item({ q, a, defaultOpen = false }) {
 }
 
 export default function Faq() {
+  const [openIndex, setOpenIndex] = useState(null)
+
   return (
     <section style={{ background: '#fff', borderTop: '1px solid rgba(0,0,0,0.07)', padding: '72px 0' }}>
       <div style={{ maxWidth: 720, margin: '0 auto', padding: '0 24px' }}>
@@ -67,7 +68,14 @@ export default function Faq() {
         </FadeUp>
 
         <div>
-          {FAQS.map((item, i) => <Item key={i} {...item} defaultOpen={i === 0} />)}
+          {FAQS.map((item, i) => (
+            <Item
+              key={i}
+              {...item}
+              open={openIndex === i}
+              onToggle={() => setOpenIndex(openIndex === i ? null : i)}
+            />
+          ))}
         </div>
 
       </div>
