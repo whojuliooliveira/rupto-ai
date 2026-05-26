@@ -91,11 +91,14 @@ export default function CtaFinal() {
           <svg width="24" height="24" fill="none" stroke="#666" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         </div>
         <h2 style={{ fontFamily: f, fontWeight: 800, fontSize: '1.5rem', color: ink, letterSpacing: '-0.03em', marginBottom: 14 }}>
-          Obrigado pela aplicação, {form.nome.split(' ')[0]}.
+          Obrigado, {form.nome.split(' ')[0]}.
         </h2>
         <p style={{ fontFamily: f, color: '#555', fontSize: '1rem', lineHeight: 1.7 }}>
-          Nossas infraestruturas de IA são projetadas para operações que já possuem equipes estabelecidas. Guardaremos seu contato para quando sua empresa atingir o próximo nível de escala.
+          Nossos sistemas são feitos pra operações com equipe. Assim que isso mudar, a Rupto é a primeira ligação que você faz.
         </p>
+        <a href="https://www.linkedin.com/company/ruptoai/" target="_blank" rel="noopener noreferrer" style={{ fontFamily: f, fontSize: '0.875rem', color: blue, fontWeight: 600, display: 'inline-block', marginTop: 20 }}>
+          Nos siga no LinkedIn →
+        </a>
       </div>
     </section>
   )
@@ -108,10 +111,10 @@ export default function CtaFinal() {
           <svg width="26" height="26" fill="none" stroke={blue} strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
         </div>
         <h2 style={{ fontFamily: f, fontWeight: 800, fontSize: '1.75rem', color: ink, letterSpacing: '-0.03em', marginBottom: 12 }}>
-          Aplicação aprovada — WhatsApp aberto!
+          Tudo certo, {form.nome.split(' ')[0]}!
         </h2>
         <p style={{ fontFamily: f, color: '#555', fontSize: '1rem', lineHeight: 1.65 }}>
-          Sua mensagem já está pronta. Só enviar para o Julio e escolher o horário do seu Diagnóstico Gratuito.
+          Sua aplicação foi aprovada. Abrimos uma conversa pra você — é só enviar a mensagem e escolher o melhor horário pro seu Diagnóstico.
         </p>
       </div>
     </section>
@@ -134,16 +137,16 @@ export default function CtaFinal() {
               Diagnóstico Gratuito
             </span>
             <h2 style={{ fontFamily: f, fontWeight: 800, fontSize: 'clamp(1.75rem, 3vw, 2.75rem)', color: ink, letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: 18 }}>
-              Aplique para o Diagnóstico Operacional
+              Agende seu Diagnóstico Operacional
             </h2>
             <p style={{ fontFamily: f, color: '#555', fontSize: '0.9375rem', lineHeight: 1.7, marginBottom: 32, maxWidth: '42ch' }}>
-              Preencha o formulário ao lado. Se a sua operação tiver o perfil ideal para as nossas infraestruturas, você será redirecionado imediatamente para o WhatsApp do nosso fundador para escolher o horário do seu Diagnóstico.
+              Preencha o formulário. Se sua operação tiver o perfil certo, entramos em contato na hora pra escolher o melhor horário.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
               {[
-                { path: 'M5 13l4 4L19 7',                                                                                                                                                                                        text: 'Diagnóstico 100% gratuito e sem compromisso' },
-                { path: 'M13 10V3L4 14h7v7l9-11h-7z',                                                                                                                                                                            text: 'Redirecionamento imediato após aprovação'     },
-                { path: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',      text: 'Seus dados não serão compartilhados'         },
+                { path: 'M5 13l4 4L19 7',                                                                                                                                                                                        text: '100% gratuito, sem compromisso'      },
+                { path: 'M13 10V3L4 14h7v7l9-11h-7z',                                                                                                                                                                            text: 'Você fala direto com o fundador'     },
+                { path: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',      text: 'Seus dados não saem daqui'           },
               ].map((item, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                   <div style={{ width: 32, height: 32, background: 'rgba(47,128,237,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
@@ -247,7 +250,7 @@ export default function CtaFinal() {
                   </>
                 ) : (
                   <>
-                    Solicitar Diagnóstico Gratuito
+                    Quero meu Diagnóstico Gratuito
                     <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                     </svg>
@@ -256,7 +259,7 @@ export default function CtaFinal() {
               </button>
 
               <p style={{ fontFamily: f, fontSize: '0.6875rem', color: '#bbb', textAlign: 'center', margin: 0 }}>
-                Sem spam. Dados usados apenas para o diagnóstico.
+                Sem spam. Sem enrolação.
               </p>
             </form>
           </div>

@@ -9,19 +9,23 @@ import Footer from "@/components/Footer";
 const FAQS = [
   {
     q: 'A IA vai substituir minha equipe atual?',
-    a: 'Não. Nossas infraestruturas são construídas para substituir o "trabalho braçal" e as tarefas repetitivas, liberando sua equipe para focar no que realmente traz lucro: relacionamento, estratégia e fechamento de vendas.',
+    a: 'Não. Os sistemas são construídos para eliminar o trabalho braçal e as tarefas repetitivas, liberando sua equipe para focar no que realmente traz resultado: relacionamento, estratégia e fechamento.',
   },
   {
     q: 'Preciso ter conhecimento técnico para usar os sistemas?',
-    a: 'Zero. Nós fazemos todo o mapeamento, o desenvolvimento complexo e a integração nos bastidores. Sua equipe continuará usando as ferramentas que já usa — como WhatsApp, planilhas ou o seu CRM atual — mas de forma automatizada.',
+    a: 'Zero. Fazemos todo o mapeamento, o desenvolvimento e a integração nos bastidores. Sua equipe continua usando as ferramentas que já usa — WhatsApp, planilhas, CRM — só que de forma automatizada.',
   },
   {
-    q: 'Como funciona se o sistema apresentar algum problema?',
-    a: 'A fase 03 do nosso método (Adotar) garante que você nunca fique sozinho. Monitoramos o sistema nos primeiros dias de uso e oferecemos suporte contínuo para refinar a infraestrutura conforme a sua empresa cresce.',
+    q: 'Quanto tempo leva pra ter o sistema funcionando?',
+    a: 'Depende do que mapeamos no diagnóstico. Projetos simples ficam prontos em 2 a 3 semanas. Os mais complexos, de 4 a 8 semanas. Em todo caso, você sabe o prazo exato antes de fechar qualquer coisa.',
+  },
+  {
+    q: 'Quanto custa?',
+    a: 'Não existe pacote fixo — o valor depende do que faz sentido pra sua operação. O diagnóstico é gratuito e é nele que definimos o escopo. Só depois disso apresentamos o investimento, sem surpresa.',
   },
   {
     q: 'O Diagnóstico é realmente gratuito? O que vocês ganham com isso?',
-    a: 'Sim, 100% gratuito. Fazemos isso porque a única forma de garantirmos que podemos construir uma infraestrutura lucrativa para você é mapeando sua operação primeiro. Se não houver gargalos que a IA possa resolver com alto retorno, nós seremos os primeiros a dizer.',
+    a: 'Sim, 100% gratuito. A única forma de garantirmos que podemos construir algo lucrativo pra você é mapeando sua operação primeiro. Se não houver gargalos com alto retorno, somos os primeiros a dizer.',
   },
 ]
 
