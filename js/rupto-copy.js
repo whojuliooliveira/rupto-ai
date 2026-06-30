@@ -109,7 +109,7 @@
       <h1>Sua empresa vende, mas <span class="rupto-accent">perde venda</span> todo dia por falta de estrutura.</h1>
       <p class="rupto-lead">Identificamos onde sua operação comercial está perdendo venda e usamos IA pra resolver, começando pelo gargalo que mais custa dinheiro.</p>
       <button class="rupto-cta" type="button" data-rupto-scroll>Agendar Diagnóstico <span aria-hidden="true">↗</span></button>
-      <p class="rupto-support">Reunião de 25 min · Você sai sabendo exatamente onde está perdendo venda</p>
+      <p class="rupto-support">Reunião de 30 min · Você sai sabendo exatamente onde está perdendo venda</p>
     `;
 
     hero.innerHTML = "";
@@ -229,7 +229,7 @@
         <h2>Se sua empresa tem processos que consomem tempo de funcionários, tempo do dono e travam o crescimento, esse diagnóstico é pra você.</h2>
         <p class="rupto-audience-copy">Empresas que já vendem e querem vender mais com o mesmo time. Operações que dependem de atendimento, follow-up, qualificação ou agendamento. Donos que estão na operação quando deveriam estar no estratégico.</p>
         <button class="rupto-cta" type="button" data-rupto-scroll>Agendar Diagnóstico <span aria-hidden="true">↗</span></button>
-        <p class="rupto-support">Reunião de 25 min · Você sai com clareza sobre seu gargalo número 1</p>
+        <p class="rupto-support">Reunião de 30 min · Você sai com clareza sobre seu gargalo número 1</p>
       </div>
     `;
   }
@@ -304,8 +304,8 @@
     );
     replaceContaining(
       section,
-      "Reunião de 25 min",
-      "Reunião de 25 min · Você sai com clareza sobre seu gargalo número 1"
+      "Reunião de 30 min",
+      "Reunião de 30 min · Você sai com clareza sobre seu gargalo número 1"
     );
     replaceExact(
       section,
