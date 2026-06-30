@@ -47,10 +47,12 @@ footer img[src="/assets/rupto-logo.svg"] {
 }
 
 .rupto-hero-accent {
-  display: inline-block;
+  display: inline;
   background: linear-gradient(105deg, #2878df 12%, #8bbcff 88%);
   background-clip: text;
   -webkit-background-clip: text;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
   color: transparent;
   font-weight: 700;
   font-style: italic;
