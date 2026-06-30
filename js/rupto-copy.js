@@ -84,15 +84,39 @@
     const hero = findSection(/DIAGNÓSTICO OPERACIONAL|DIAGNÓSTICO COMERCIAL/);
     if (!hero) return false;
     hero.dataset.ruptoCopy = "hero";
-    hero.innerHTML = `
-      <div class="rupto-hero">
-        <p class="rupto-eyebrow">DIAGNÓSTICO COMERCIAL · IA APLICADA A VENDAS E CRESCIMENTO</p>
-        <h1>Sua empresa vende, mas <span class="rupto-accent">perde venda</span> todo dia por falta de estrutura.</h1>
-        <p class="rupto-lead">Identificamos onde sua operação comercial está perdendo venda e usamos IA pra resolver, começando pelo gargalo que mais custa dinheiro.</p>
-        <button class="rupto-cta" type="button" data-rupto-scroll>Agendar Diagnóstico <span aria-hidden="true">↗</span></button>
-        <p class="rupto-support">Reunião de 25 min · Você sai sabendo exatamente onde está perdendo venda</p>
-      </div>
+    hero.classList.add("rupto-hero-section");
+
+    const video = document.createElement("video");
+    video.className = "rupto-hero-video";
+    video.autoplay = true;
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
+    video.setAttribute("playsinline", "");
+    video.preload = "auto";
+    const source = document.createElement("source");
+    source.src = "/assets/video-header.mp4";
+    source.type = "video/mp4";
+    video.appendChild(source);
+
+    const overlay = document.createElement("div");
+    overlay.className = "rupto-hero-overlay";
+
+    const content = document.createElement("div");
+    content.className = "rupto-hero";
+    content.innerHTML = `
+      <p class="rupto-eyebrow">DIAGNÓSTICO COMERCIAL · IA APLICADA A VENDAS E CRESCIMENTO</p>
+      <h1>Sua empresa vende, mas <span class="rupto-accent">perde venda</span> todo dia por falta de estrutura.</h1>
+      <p class="rupto-lead">Identificamos onde sua operação comercial está perdendo venda e usamos IA pra resolver, começando pelo gargalo que mais custa dinheiro.</p>
+      <button class="rupto-cta" type="button" data-rupto-scroll>Agendar Diagnóstico <span aria-hidden="true">↗</span></button>
+      <p class="rupto-support">Reunião de 25 min · Você sai sabendo exatamente onde está perdendo venda</p>
     `;
+
+    hero.innerHTML = "";
+    hero.appendChild(video);
+    hero.appendChild(overlay);
+    hero.appendChild(content);
+    video.play().catch(() => {});
     return true;
   }
 
