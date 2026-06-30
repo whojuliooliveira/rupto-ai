@@ -87,7 +87,7 @@
     hero.innerHTML = `
       <div class="rupto-hero">
         <p class="rupto-eyebrow">DIAGNÓSTICO COMERCIAL · IA APLICADA A VENDAS E CRESCIMENTO</p>
-        <h1>Sua empresa vende, mas <span class="rupto-hero-accent">perde venda</span> <span class="rupto-hero-light">todo dia por falta de estrutura.</span></h1>
+        <h1>Sua empresa vende, mas <span class="rupto-accent">perde venda</span> todo dia por falta de estrutura.</h1>
         <p class="rupto-lead">Identificamos onde sua operação comercial está perdendo venda e usamos IA pra resolver, começando pelo gargalo que mais custa dinheiro.</p>
         <button class="rupto-cta" type="button" data-rupto-scroll>Agendar Diagnóstico <span aria-hidden="true">↗</span></button>
         <p class="rupto-support">Reunião de 25 min · Você sai sabendo exatamente onde está perdendo venda</p>
@@ -102,8 +102,8 @@
     section.dataset.ruptoSection = "problem";
     const heading = section.querySelector("h2");
     if (heading)
-      heading.textContent =
-        "A maioria das empresas implementa IA do jeito errado.";
+      heading.innerHTML =
+        'A maioria das empresas implementa IA <span class="rupto-accent">do jeito errado.</span>';
 
     [
       [
@@ -137,8 +137,8 @@
     if (!section) return;
     const heading = section.querySelector("h2");
     if (heading)
-      heading.textContent =
-        "Antes de implementar qualquer IA, a gente descobre onde sua empresa está perdendo venda.";
+      heading.innerHTML =
+        'Antes de implementar qualquer IA, a gente descobre onde sua empresa está <span class="rupto-accent">perdendo venda.</span>';
 
     [
       [
@@ -178,8 +178,8 @@
     replaceExact(section, "MERCADO VS CLICKA", "MERCADO VS RUPTO");
     const heading = section.querySelector("h2");
     if (heading)
-      heading.textContent =
-        "O mercado vende ferramenta. A Rupto implementa inteligência.";
+      heading.innerHTML =
+        'O mercado vende ferramenta. <span class="rupto-accent">A Rupto implementa inteligência.</span>';
     replaceExact(section, "O QUE O MERCADO FAZ", "O que o mercado faz:");
     replaceExact(section, "O QUE A CLICKA FAZ", "O que a Rupto faz:");
 
@@ -247,7 +247,8 @@
     const section = document.getElementById("faq");
     if (!section) return;
     const introHeading = section.querySelector("h2");
-    if (introHeading) introHeading.remove();
+    if (introHeading)
+      introHeading.innerHTML = 'Perguntas que empresários fazem <span class="rupto-accent">antes de agendar.</span>';
     const headings = Array.from(section.querySelectorAll("h3"));
     const buttons = Array.from(section.querySelectorAll("button"));
 

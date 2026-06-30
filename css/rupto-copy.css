@@ -33,28 +33,14 @@ footer img[src="/assets/rupto-logo.svg"] {
   max-width: 940px;
   margin: 0 auto 28px;
   color: #ededed;
-  font: 700 clamp(38px, 5.8vw, 68px)/1.04 "Space Grotesk", sans-serif;
+  font: 700 clamp(38px, 5.8vw, 68px)/1.15 "Space Grotesk", sans-serif;
   letter-spacing: -0.055em;
   text-wrap: balance;
 }
 
-.rupto-hero-strong {
-  font-weight: 700;
-}
-
-.rupto-hero-light {
-  font-weight: 400;
-}
-
-.rupto-hero-accent {
+.rupto-accent {
   display: inline;
-  background: linear-gradient(105deg, #2878df 12%, #8bbcff 88%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  color: transparent;
-  font-weight: 700;
+  color: #5ba4f5;
   font-style: italic;
 }
 
