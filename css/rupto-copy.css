@@ -33,7 +33,7 @@ footer img[src="/assets/rupto-logo.svg"] {
   max-width: 940px;
   margin: 0 auto 28px;
   color: #ededed;
-  font: 400 clamp(38px, 5.8vw, 68px)/1.04 "Space Grotesk", sans-serif;
+  font: 700 clamp(38px, 5.8vw, 68px)/1.04 "Space Grotesk", sans-serif;
   letter-spacing: -0.055em;
   text-wrap: balance;
 }

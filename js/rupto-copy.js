@@ -87,7 +87,7 @@
     hero.innerHTML = `
       <div class="rupto-hero">
         <p class="rupto-eyebrow">DIAGNÓSTICO COMERCIAL · IA APLICADA A VENDAS E CRESCIMENTO</p>
-        <h1><span class="rupto-hero-strong">Sua empresa vende, mas <span class="rupto-hero-accent">perde venda</span></span> <span class="rupto-hero-light">todo dia por falta de estrutura.</span></h1>
+        <h1>Sua empresa vende, mas <span class="rupto-hero-accent">perde venda</span> <span class="rupto-hero-light">todo dia por falta de estrutura.</span></h1>
         <p class="rupto-lead">Identificamos onde sua operação comercial está perdendo venda e usamos IA pra resolver, começando pelo gargalo que mais custa dinheiro.</p>
         <button class="rupto-cta" type="button" data-rupto-scroll>Agendar Diagnóstico <span aria-hidden="true">↗</span></button>
         <p class="rupto-support">Reunião de 25 min · Você sai sabendo exatamente onde está perdendo venda</p>
