@@ -1,0 +1,231 @@
+.rupto-hero {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  padding: 0 24px 96px;
+  text-align: center;
+}
+
+nav img[src="/assets/rupto-logo.svg"] {
+  width: auto !important;
+  height: 22px !important;
+  object-fit: contain;
+}
+
+footer img[src="/assets/rupto-logo.svg"] {
+  width: auto !important;
+  height: 24px !important;
+  object-fit: contain;
+}
+
+.rupto-eyebrow {
+  margin: 0 0 24px;
+  color: #60a5fa;
+  font: 600 11px/1.4 "Inter", sans-serif;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.rupto-hero > .rupto-eyebrow {
+  color: #8a8a8a;
+}
+
+.rupto-hero h1 {
+  max-width: 940px;
+  margin: 0 auto 28px;
+  color: #ededed;
+  font: 400 clamp(38px, 5.8vw, 68px)/1.04 "Space Grotesk", sans-serif;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+.rupto-hero-strong {
+  font-weight: 700;
+}
+
+.rupto-hero-light {
+  font-weight: 400;
+}
+
+.rupto-hero-accent {
+  display: inline-block;
+  background: linear-gradient(105deg, #2878df 12%, #8bbcff 88%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.rupto-lead {
+  max-width: 720px;
+  margin: 0 auto 34px;
+  color: #999;
+  font: 400 clamp(16px, 2vw, 19px)/1.65 "Inter", sans-serif;
+}
+
+.rupto-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 28px;
+  border: 1px solid rgba(125, 180, 255, 0.32);
+  border-radius: 999px;
+  background: linear-gradient(110deg, #1e63c8 0%, #2f80ed 55%, #6aa8f7 100%);
+  color: #fff;
+  cursor: pointer;
+  font: 600 14px/1 "Inter", sans-serif;
+  box-shadow: 0 8px 24px rgba(31, 105, 211, 0.2);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.rupto-cta:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow: 0 12px 30px rgba(31, 105, 211, 0.3);
+}
+
+.rupto-hero .rupto-cta {
+  width: auto;
+  min-height: 54px;
+  gap: 10px;
+  padding: 14px 26px;
+  border: 0;
+  background: linear-gradient(110deg, #1e63c8 0%, #2f80ed 58%, #6aa8f7 100%);
+  color: #fff;
+  font: 700 16px/1 "Albert Sans", sans-serif;
+  box-shadow: 0 9px 26px rgba(36, 111, 209, 0.24);
+}
+
+.rupto-hero .rupto-cta:hover {
+  background: linear-gradient(110deg, #246fd6 0%, #3b8df5 58%, #7db6fb 100%);
+  box-shadow: 0 12px 32px rgba(36, 111, 209, 0.32);
+}
+
+.rupto-cta span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1;
+  transform: translateY(-1px);
+}
+
+.rupto-support {
+  margin: 18px 0 0;
+  color: #666;
+  font: 400 12px/1.5 "Inter", sans-serif;
+}
+
+.rupto-audience {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.rupto-audience h2 {
+  max-width: 860px;
+  margin: 0 auto 24px;
+  color: #ededed;
+  font: 700 clamp(30px, 5vw, 52px)/1.08 "Space Grotesk", sans-serif;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+.rupto-audience-copy {
+  max-width: 740px;
+  margin: 0 auto 32px;
+  color: #888;
+  font: 400 16px/1.75 "Inter", sans-serif;
+}
+
+.rupto-control-card {
+  border-color: rgba(47, 128, 237, 0.22) !important;
+  background: rgba(6, 14, 28, 0.46) !important;
+}
+
+.rupto-market-card {
+  border-color: rgba(47, 128, 237, 0.24) !important;
+  background: rgba(6, 14, 28, 0.46) !important;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18) !important;
+}
+
+.rupto-founder {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.rupto-founder h2 {
+  max-width: 760px;
+  margin: 0 0 28px;
+  color: #ededed;
+  font: 700 clamp(36px, 6vw, 64px)/1.02 "Space Grotesk", sans-serif;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+}
+
+.rupto-founder-byline {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 42px;
+  color: #888;
+  font: 500 13px/1.4 "Inter", sans-serif;
+}
+
+.rupto-founder-byline img {
+  width: 42px;
+  height: 42px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.035);
+  object-fit: contain;
+}
+
+.rupto-founder-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(32px, 7vw, 88px);
+  padding: clamp(30px, 5vw, 58px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(47, 128, 237, 0.12), transparent 35%),
+    rgba(255, 255, 255, 0.018);
+}
+
+.rupto-founder-statement {
+  margin: 0;
+  color: #ededed;
+  font: 600 clamp(24px, 3vw, 38px)/1.18 "Space Grotesk", sans-serif;
+  letter-spacing: -0.035em;
+}
+
+.rupto-founder-copy p {
+  margin: 0 0 20px;
+  color: #929292;
+  font: 400 15px/1.8 "Inter", sans-serif;
+}
+
+.rupto-founder-copy p:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 1200px) {
+  section[data-rupto-section="problem"],
+  section[data-rupto-section="control"] {
+    padding-right: calc((100vw - 1024px) / 2);
+    padding-left: calc((100vw - 1024px) / 2);
+  }
+}
+
+@media (max-width: 720px) {
+  .rupto-founder-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.rupto-hero {
