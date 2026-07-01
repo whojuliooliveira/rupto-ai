@@ -86,18 +86,22 @@
     hero.dataset.ruptoCopy = "hero";
     hero.classList.add("rupto-hero-section");
 
-    const video = document.createElement("video");
-    video.className = "rupto-hero-video";
-    video.autoplay = true;
-    video.muted = true;
-    video.loop = true;
-    video.playsInline = true;
-    video.setAttribute("playsinline", "");
-    video.preload = "auto";
-    const source = document.createElement("source");
-    source.src = "/assets/video-header.mp4";
-    source.type = "video/mp4";
-    video.appendChild(source);
+    const shouldLoadVideo =
+      !window.matchMedia("(max-width: 767px)").matches &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
+      !navigator.connection?.saveData;
+    let video = null;
+
+    if (shouldLoadVideo) {
+      video = document.createElement("video");
+      video.className = "rupto-hero-video";
+      video.autoplay = true;
+      video.muted = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.setAttribute("playsinline", "");
+      video.preload = "none";
+    }
 
     const overlay = document.createElement("div");
     overlay.className = "rupto-hero-overlay";
@@ -113,10 +117,31 @@
     `;
 
     hero.innerHTML = "";
-    hero.appendChild(video);
+    if (video) hero.appendChild(video);
     hero.appendChild(overlay);
     hero.appendChild(content);
-    video.play().catch(() => {});
+
+    if (video) {
+      const loadVideo = () => {
+        if (video.dataset.loaded === "true") return;
+        video.dataset.loaded = "true";
+        const source = document.createElement("source");
+        source.src = "/assets/video-header.mp4";
+        source.type = "video/mp4";
+        video.appendChild(source);
+        video.load();
+        video.play().catch(() => {});
+      };
+      const scheduleVideo = () => {
+        if ("requestIdleCallback" in window) {
+          window.requestIdleCallback(loadVideo, { timeout: 3500 });
+        } else {
+          window.setTimeout(loadVideo, 1800);
+        }
+      };
+      if (document.readyState === "complete") scheduleVideo();
+      else window.addEventListener("load", scheduleVideo, { once: true });
+    }
     return true;
   }
 
@@ -420,6 +445,8 @@
     if (node.nodeType !== 1) return;
 
     node.querySelectorAll("img").forEach((img) => {
+      img.loading = "lazy";
+      img.decoding = "async";
       if (/clicka|lovable/i.test(img.src) || /clicka/i.test(img.alt) || !img.src || img.naturalWidth === 0) {
         img.src = "/assets/rupto-logo.svg";
         img.alt = "Rupto AI";
