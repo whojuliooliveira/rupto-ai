@@ -230,7 +230,7 @@ footer img[src="/assets/rupto-logo.svg"] {
     grid-template-columns: 1fr;
   }
 }
-.rupto-hero {
+
 @font-face {
   font-family: "Albert Sans";
   src: url("../assets/fonts/albert-sans-latin.woff2") format("woff2");
@@ -253,4 +253,11 @@ footer img[src="/assets/rupto-logo.svg"] {
   font-style: normal;
   font-weight: 300 700;
   font-display: swap;
+}
+
+@media (hover: none) {
+  .rupto-control-card,
+  .rupto-market-card {
+    transition: none !important;
+  }
 }
