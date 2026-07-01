@@ -1,326 +1,467 @@
-<!DOCTYPE html><html lang="pt-BR"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rupto AI — IA aplicada a vendas e crescimento</title>
-    <meta name="description" content="Identificamos onde sua operação comercial está perdendo venda e usamos IA para resolver, começando pelo gargalo que mais custa dinheiro.">
-    <meta name="author" content="Rupto AI — Júlio Oliveira">
-    <meta name="robots" content="index, follow">
-    <meta name="keywords" content="diagnóstico comercial, IA aplicada a vendas, automação comercial, inteligência artificial para vendas, operação comercial, Rupto AI">
-    <link rel="canonical" href="https://ruptoai.com/">
-    <style>
-      img[src="/assets/rupto-logo.svg"] {
-        filter: none !important;
-      }
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rupto AI — IA aplicada a vendas e crescimento</title>
+  <meta name="description" content="Identificamos onde sua operação comercial está perdendo venda e usamos IA para resolver, começando pelo gargalo que mais custa dinheiro.">
+  <meta name="author" content="Rupto AI — Júlio Oliveira">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="diagnóstico comercial, IA aplicada a vendas, automação comercial, inteligência artificial para vendas, operação comercial, Rupto AI">
+  <link rel="canonical" href="https://ruptoai.com/">
 
-      nav a[href="https://www.linkedin.com/company/ruptoai/"] {
-        opacity: 0.7 !important;
-        background: rgba(255, 255, 255, 0.035);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
-        transition: opacity 0.2s ease, transform 0.2s ease,
-          background-color 0.2s ease, border-color 0.2s ease !important;
-      }
+  <link rel="icon" type="image/svg+xml" href="/assets/rupto-favicon.svg">
 
-      nav a[href="https://www.linkedin.com/company/ruptoai/"]:hover {
-        opacity: 1 !important;
-        transform: translateY(-1px);
-        background: rgba(255, 255, 255, 0.08);
-        border-color: rgba(255, 255, 255, 0.28);
-      }
+  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="css/styles.css" as="style">
 
-      #lp-form form {
-        display: none !important;
-      }
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ruptoai.com/">
+  <meta property="og:title" content="Rupto AI, Descubra o gargalo que trava o crescimento da sua empresa">
+  <meta property="og:description" content="Identificamos onde sua operação comercial está perdendo venda e usamos IA para resolver, começando pelo gargalo que mais custa dinheiro.">
+  <meta property="og:image" content="https://ruptoai.com/assets/og-preview.png">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Rupto AI">
 
-      #my-cal-inline-site {
-        width: 100%;
-        height: 100%;
-        overflow: visible;
-      }
-    </style>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@ruptoai">
+  <meta name="twitter:title" content="Rupto AI, Descubra o gargalo que trava o crescimento da sua empresa">
+  <meta name="twitter:description" content="Identificamos onde sua operação comercial está perdendo venda e usamos IA para resolver, começando pelo gargalo que mais custa dinheiro.">
+  <meta name="twitter:image" content="https://ruptoai.com/assets/og-preview.png">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/assets/rupto-favicon.svg">
-
-    <!-- Fonts -->
-    <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
-
-    <!-- Critical CSS/JS -->
-    <link rel="preload" href="css/index-CQdIASk2.css" as="style" crossorigin>
-    <link rel="preload" href="js/index-CTO_dGAt.js" as="script" crossorigin>
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ruptoai.com/">
-    <meta property="og:title" content="Rupto AI, Descubra o gargalo que trava o crescimento da sua empresa">
-    <meta property="og:description" content="Identificamos onde sua operação comercial está perdendo venda e usamos IA para resolver, começando pelo gargalo que mais custa dinheiro.">
-    <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/508901a5-c25a-44c1-a7d2-c31cdc0e4d89/id-preview-613ba7e4--78c5e9e5-ff95-4550-b420-26d6a205f988.lovable.app-1775354957173.png">
-    <meta property="og:locale" content="pt_BR">
-    <meta property="og:site_name" content="Rupto AI">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@ruptoai">
-    <meta name="twitter:title" content="Rupto AI, Descubra o gargalo que trava o crescimento da sua empresa">
-    <meta name="twitter:description" content="Identificamos onde sua operação comercial está perdendo venda e usamos IA para resolver, começando pelo gargalo que mais custa dinheiro.">
-    <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/508901a5-c25a-44c1-a7d2-c31cdc0e4d89/id-preview-613ba7e4--78c5e9e5-ff95-4550-b420-26d6a205f988.lovable.app-1775354957173.png">
-
-    <!-- Schema Markup JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "ProfessionalService",
-          "name": "Rupto AI, Diagnóstico Operacional e Implementação de IA",
-          "url": "https://ruptoai.com",
-          "description": "Consultoria que mapeia a operação de empresas com inteligência artificial, identifica o gargalo que mais drena dinheiro e implementa agentes de IA sob medida para eliminá-lo.",
-          "areaServed": "BR",
-          "serviceType": "Diagnóstico operacional e implementação de agentes de IA sob medida",
-          "provider": {
-            "@type": "Organization",
-            "name": "Rupto AI",
-            "url": "https://ruptoai.com",
-            "foundingLocation": "Brasília, DF, Brasil",
-            "sameAs": [
-              "https://www.linkedin.com/company/ruptoai/"
-            ]
-          },
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Serviços Rupto AI",
-            "itemListElement": [
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diagnóstico Operacional com IA" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mapeamento de Prioridades" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Implementação de Agentes de IA sob medida" } }
-            ]
-          }
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "O que vocês fazem exatamente?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Entramos na sua empresa, mapeamos todos os processos com IA, identificamos qual gargalo está te custando mais dinheiro, e implementamos agentes de inteligência artificial sob medida para resolver, começando pelo mais crítico."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Quanto tempo leva para ver resultado?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "O diagnóstico leva de 5 a 7 dias úteis. A implementação do primeiro sistema acontece nos 10 a 15 dias seguintes. O tempo até o primeiro resultado depende da complexidade da operação e do gargalo identificado."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Funciona para o meu tipo de empresa?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Se sua empresa tem processos de atendimento, qualificação, follow-up ou agendamento que dependem de pessoas pra funcionar, o diagnóstico vai mostrar exatamente onde a IA faz diferença pra você."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Qual a diferença de vocês para um chatbot ou ferramenta de IA?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "A maioria das ferramentas de IA é genérica, não conhece sua operação, seus dados, suas dores. Nós fazemos um diagnóstico completo antes de implementar qualquer coisa. É a diferença entre tomar um remédio aleatório e ir ao médico primeiro."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Meu problema é muito específico. Vocês conseguem resolver?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Essa é justamente a razão pela qual fazemos o diagnóstico antes. Não vendemos solução pronta, mapeamos o seu problema e construímos a solução sob medida para ele."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Qual o investimento?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Depende da complexidade da sua operação. O diagnóstico inicial é gratuito e nele você já recebe clareza sobre o gargalo principal. A partir daí, montamos uma proposta sob medida. Agende uma conversa para entender melhor."
-              }
-            }
-          ]
-        },
-        {
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "name": "Rupto AI, Diagnóstico Operacional e Implementação de IA",
+        "url": "https://ruptoai.com",
+        "description": "Consultoria que mapeia a operação de empresas com inteligência artificial, identifica o gargalo que mais drena dinheiro e implementa agentes de IA sob medida para eliminá-lo.",
+        "areaServed": "BR",
+        "serviceType": "Diagnóstico operacional e implementação de agentes de IA sob medida",
+        "provider": {
           "@type": "Organization",
           "name": "Rupto AI",
-          "alternateName": "Rupto AI",
           "url": "https://ruptoai.com",
-          "description": "Empresa brasileira que realiza diagnóstico operacional com IA e implementa agentes de inteligência artificial sob medida para empresas.",
-          "foundingLocation": {
-            "@type": "Place",
-            "name": "Brasília",
-            "addressRegion": "DF",
-            "addressCountry": "BR"
+          "foundingLocation": "Brasília, DF, Brasil",
+          "sameAs": ["https://www.linkedin.com/company/ruptoai/"]
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Serviços Rupto AI",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diagnóstico Operacional com IA" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mapeamento de Prioridades" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Implementação de Agentes de IA sob medida" } }
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "O que vocês fazem exatamente?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Entramos na sua operação comercial, identificamos onde você está perdendo venda e usamos IA pra resolver. Começando pelo gargalo que mais impacta seu faturamento."
+            }
           },
-          "sameAs": [
-            "https://www.linkedin.com/company/ruptoai/"
-          ],
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "contactType": "sales",
-            "availableLanguage": "Portuguese"
+          {
+            "@type": "Question",
+            "name": "Quanto tempo leva pra ver resultado?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "O diagnóstico leva de 5 a 7 dias úteis. A implementação do primeiro sistema acontece nos 10 a 15 dias seguintes. O impacto começa a aparecer nas primeiras semanas de operação."
+            }
           },
-          "founder": {
-            "@type": "Person",
-            "name": "Júlio Oliveira",
-            "jobTitle": "Fundador"
-          }
-        }
-      ]
-    }
-    </script>
-    <link rel="stylesheet" crossorigin="" href="css/index-CQdIASk2.css">
-    <link rel="stylesheet" href="css/rupto-copy.css">
-    <script type="module" crossorigin="" src="js/index-CTO_dGAt.js"></script>
-    <script type="text/javascript">
-
-      if (window.location.pathname === "/mentoria") {
-        window.location.replace("/");
-      }
-
-      function updateNavbarCta(root = document) {
-        const buttons = [];
-        if (root.matches && root.matches("button")) {
-          buttons.push(root);
-        }
-        if (root.querySelectorAll) {
-          buttons.push(...root.querySelectorAll("button"));
-        }
-
-        buttons.forEach(function (button) {
-          const label = button.textContent.trim();
-          if (label === "Dashboard") {
-            button.remove();
-            return;
-          }
-          if (label === "Diagnóstico" || label === "Diagnóstico →") {
-            button.textContent = "Diagnóstico Gratuito →";
-          }
-        });
-      }
-
-      function updateNavbarSocial(root = document) {
-        const links = [];
-        if (root.matches && root.matches('a[href="https://www.instagram.com/clicka.ia"]')) {
-          links.push(root);
-        }
-        if (root.querySelectorAll) {
-          links.push(...root.querySelectorAll('a[href="https://www.instagram.com/clicka.ia"]'));
-        }
-
-        links.forEach(function (link) {
-          const isDesktopNavbar = link.classList.contains("w-8") && link.classList.contains("h-8");
-          const isMobileNavbar = link.classList.contains("mt-4") && link.classList.contains("gap-2");
-          if (!isDesktopNavbar && !isMobileNavbar) return;
-
-          link.href = "https://www.linkedin.com/company/ruptoai/";
-          link.setAttribute("aria-label", "LinkedIn da Rupto AI");
-          link.innerHTML = [
-            '<svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">',
-            '<path d="M5.34 3.1A2.16 2.16 0 1 1 5.34 7.42 2.16 2.16 0 0 1 5.34 3.1ZM3.47 8.86h3.74V20.9H3.47V8.86ZM9.55 8.86h3.58v1.65h.05c.5-.95 1.72-1.95 3.54-1.95 3.78 0 4.48 2.49 4.48 5.73v6.61h-3.73v-5.86c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1v5.96H9.55V8.86Z"></path>',
-            '</svg>',
-            isMobileNavbar ? '<span>LinkedIn</span>' : ''
-          ].join("");
-        });
-      }
-
-      window.addEventListener("load", function() {
-        updateNavbarCta();
-        updateNavbarSocial();
-      });
-    </script>
-</head>
-
-  <body>
-    <div id="root"></div>
-
-
-    <script src="js/rupto-copy.js?v=11" charset="UTF-8"></script>
-
-    <script type="text/javascript">
-      function initCal() {
-        if (window.Cal) return;
-        (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-        Cal("init", "site", {origin:"https://app.cal.com"});
-        Cal.config = Cal.config || {};
-        Cal.config.forwardQueryParams = true;
-      }
-
-      function mountCal() {
-        const section = document.getElementById("lp-form");
-        if (!section || document.getElementById("my-cal-inline-site")) return;
-        initCal();
-
-        section.querySelectorAll("form, .solo-calendar-owner, .mb-3").forEach(function(el) {
-          let node = el;
-          while (node.parentElement && node.parentElement !== section && node.parentElement.children.length === 1) {
-            node = node.parentElement;
-          }
-          node.remove();
-        });
-
-        Array.from(section.querySelectorAll("*")).forEach(function(el) {
-          if (el.children.length === 0 && /Reunião de 30 min|Você sai com clareza/i.test(el.textContent)) {
-            el.closest("p, span, div") && el.closest("p, span, div").remove();
-          }
-        });
-
-        const div = document.createElement("div");
-        div.id = "my-cal-inline-site";
-        section.appendChild(div);
-        Cal.ns.site("inline", {
-          elementOrSelector: "#my-cal-inline-site",
-          config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
-          calLink: "whojuliooliveira/site",
-        });
-        Cal.ns.site("ui", {
-          "hideEventTypeDetails": false,
-          "layout": "month_view",
-          "cssVarsPerTheme": {
-            "dark": {
-              "cal-brand": "#2563eb",
-              "cal-brand-emphasis": "#1d4ed8",
-              "cal-brand-text": "#ffffff"
+          {
+            "@type": "Question",
+            "name": "Funciona pro meu tipo de empresa?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Se sua empresa tem processos de atendimento, qualificação, follow-up ou agendamento que dependem de pessoas pra funcionar, funciona. O diagnóstico vai mostrar exatamente onde a IA faz diferença pra você."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Qual a diferença de vocês pra um chatbot ou ferramenta de IA?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A maioria das ferramentas é genérica e não conhece sua operação. A gente faz o diagnóstico antes de implementar qualquer coisa. É a diferença entre tomar um remédio aleatório e ir ao médico primeiro."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Meu problema é muito específico. Vocês conseguem resolver?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Essa é justamente a razão do diagnóstico. Não vendemos solução pronta. Mapeamos seu problema e construímos sob medida pra ele."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quanto custa?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "O diagnóstico é gratuito. A partir do que ele revelar, montamos uma proposta sob medida pra sua operação. Agende uma conversa pra entender melhor."
             }
           }
-        });
+        ]
+      },
+      {
+        "@type": "Organization",
+        "name": "Rupto AI",
+        "alternateName": "Rupto AI",
+        "url": "https://ruptoai.com",
+        "description": "Empresa brasileira que realiza diagnóstico operacional com IA e implementa agentes de inteligência artificial sob medida para empresas.",
+        "foundingLocation": {
+          "@type": "Place",
+          "name": "Brasília",
+          "addressRegion": "DF",
+          "addressCountry": "BR"
+        },
+        "sameAs": ["https://www.linkedin.com/company/ruptoai/"],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "availableLanguage": "Portuguese"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Júlio Oliveira",
+          "jobTitle": "Fundador"
+        }
       }
+    ]
+  }
+  </script>
 
-      function observeCalSection() {
-        const section = document.getElementById("lp-form");
-        if (!section) return;
-        if (!("IntersectionObserver" in window)) return;
-        const observer = new IntersectionObserver(function (entries) {
-          if (!entries.some(function (entry) { return entry.isIntersecting; })) return;
-          observer.disconnect();
-          mountCal();
-        }, { rootMargin: "1200px 0px" });
-        observer.observe(section);
-      }
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="bg-glow"></div>
+  <div class="bg-noise"></div>
 
-      function scheduleCalObserver() {
-        setTimeout(observeCalSection, 500);
-      }
+  <div class="page">
+    <nav class="navbar">
+      <div class="navbar-inner">
+        <div class="navbar-brand">
+          <img src="assets/rupto-logo.svg" alt="Rupto AI" width="22" height="22">
+          <span>Rupto AI</span>
+        </div>
+        <div class="navbar-actions">
+          <a class="navbar-social" href="https://www.linkedin.com/company/ruptoai/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn da Rupto AI">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.34 3.1A2.16 2.16 0 1 1 5.34 7.42 2.16 2.16 0 0 1 5.34 3.1ZM3.47 8.86h3.74V20.9H3.47V8.86ZM9.55 8.86h3.58v1.65h.05c.5-.95 1.72-1.95 3.54-1.95 3.78 0 4.48 2.49 4.48 5.73v6.61h-3.73v-5.86c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1v5.96H9.55V8.86Z"></path></svg>
+          </a>
+          <button class="navbar-cta" type="button" data-scroll-lp>Diagnóstico Gratuito</button>
+        </div>
+        <button class="navbar-menu-btn" type="button" id="navbar-menu-toggle" aria-label="Abrir menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="navbar-mobile-panel" id="navbar-mobile-panel">
+        <a class="navbar-mobile-social" href="https://www.linkedin.com/company/ruptoai/" target="_blank" rel="noopener noreferrer">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.34 3.1A2.16 2.16 0 1 1 5.34 7.42 2.16 2.16 0 0 1 5.34 3.1ZM3.47 8.86h3.74V20.9H3.47V8.86ZM9.55 8.86h3.58v1.65h.05c.5-.95 1.72-1.95 3.54-1.95 3.78 0 4.48 2.49 4.48 5.73v6.61h-3.73v-5.86c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1v5.96H9.55V8.86Z"></path></svg>
+          <span>LinkedIn</span>
+        </a>
+        <button class="navbar-cta" type="button" data-scroll-lp>Diagnóstico Gratuito</button>
+      </div>
+    </nav>
 
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", scheduleCalObserver, { once: true });
-      } else {
-        scheduleCalObserver();
-      }
+    <main>
+    <!-- Hero -->
+    <section class="hero-section" data-rupto-section="hero">
+      <div class="hero-content">
+        <p class="hero-eyebrow">DIAGNÓSTICO COMERCIAL · IA APLICADA A VENDAS E CRESCIMENTO</p>
+        <h1 class="hero-title">Sua empresa vende, mas <em>perde venda</em> todo dia por falta de estrutura.</h1>
+        <p class="hero-copy">Identificamos onde sua operação comercial está perdendo venda e usamos IA pra resolver, começando pelo gargalo que mais custa dinheiro.</p>
+        <button class="cta-btn" type="button" data-scroll-lp>Agendar Diagnóstico <span aria-hidden="true">↗</span></button>
+        <p class="hero-support">Reunião de 30 min · Você sai sabendo exatamente onde está perdendo venda</p>
+      </div>
+    </section>
 
-      document.addEventListener("click", function (event) {
-        if (!event.target.closest("[data-scroll-lp], [data-rupto-scroll]")) return;
-        mountCal();
-      });
-    </script>
-</body></html>
+    <!-- Problem -->
+    <section data-rupto-section="problem">
+      <p class="eyebrow reveal">o problema</p>
+      <h2 class="section-title reveal">A maioria das empresas implementa IA <span class="text-gradient">do jeito errado.</span></h2>
+      <p class="section-lead reveal">Compra um chatbot. Assina uma ferramenta nova. Automatiza um processo aleatório. E não muda nada.</p>
+
+      <div class="problem-cards">
+        <div class="problem-card liquid-glass-card reveal">
+          <div class="problem-card-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+          </div>
+          <h3>Refém da operação</h3>
+          <p>Você passa o dia apagando incêndio sem tempo pra pensar no que realmente importa.</p>
+        </div>
+        <div class="problem-card liquid-glass-card reveal">
+          <div class="problem-card-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          </div>
+          <h3>Time no limite</h3>
+          <p>Contratar mais gente não resolve, só aumenta custo fixo. O problema está no processo, não no headcount.</p>
+        </div>
+        <div class="problem-card liquid-glass-card reveal">
+          <div class="problem-card-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M2 12h20"></path></svg>
+          </div>
+          <h3>IA sem resultado</h3>
+          <p>Você já tentou chatbot, automação, ferramenta nova. Nada gerou resultado real porque ninguém mapeou o problema certo antes de implementar.</p>
+        </div>
+        <div class="problem-card liquid-glass-card reveal">
+          <div class="problem-card-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+          </div>
+          <h3>Mais lead não é a resposta</h3>
+          <p>Você acha que precisa de mais lead e mais tráfego. Mas o problema pode estar no atendimento, no follow-up, ou no funil que vaza silenciosamente toda semana.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section data-rupto-section="how-it-works">
+      <p class="eyebrow reveal">como funciona</p>
+      <h2 class="section-title reveal">Antes de implementar qualquer IA, a gente descobre onde sua empresa está <span class="text-gradient">perdendo venda.</span></h2>
+      <p class="section-lead reveal">Diagnóstico primeiro. Implementação depois. Assim cada real investido vai direto pra onde gera resultado.</p>
+
+      <div class="steps">
+        <div class="steps-track"></div>
+
+        <div class="step reveal">
+          <div class="step-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+          </div>
+          <div class="step-content">
+            <span class="step-badge">Pilar 01</span>
+            <h3>AI Audit</h3>
+            <p>Entramos na sua operação comercial e mapeamos onde o processo está quebrando. Você sai com clareza sobre o gargalo que mais custa dinheiro, antes de qualquer implementação.</p>
+          </div>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"></path><path d="M18 17V9M13 17V5M8 17v-3"></path></svg>
+          </div>
+          <div class="step-content">
+            <span class="step-badge">Pilar 02</span>
+            <h3>Priorização</h3>
+            <p>Organizamos o que resolver primeiro com base no impacto direto no faturamento. Sem achismo, sem implementar coisa que não move o ponteiro.</p>
+          </div>
+        </div>
+
+        <div class="step reveal">
+          <div class="step-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 1 0 10 10"></path><path d="M12 12l6-6"></path><path d="M17 3h5v5"></path></svg>
+          </div>
+          <div class="step-content">
+            <span class="step-badge">Pilar 03</span>
+            <h3>Implementação com IA</h3>
+            <p>Montamos e operamos a solução sob medida pra cada gargalo identificado. Começando pelo mais crítico e expandindo conforme o resultado aparece.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Market vs Rupto -->
+    <section data-rupto-section="market">
+      <p class="eyebrow reveal">mercado vs rupto</p>
+      <h2 class="section-title reveal">O mercado vende ferramenta. <span class="text-gradient-3">A Rupto implementa inteligência.</span></h2>
+
+      <div class="market-grid">
+        <div class="market-card market-card--market reveal">
+          <div class="market-card-label">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4M12 16h.01"></path></svg>
+            <span>o que o mercado faz</span>
+          </div>
+          <ul>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+              <span>Vende solução genérica sem entender sua operação. IA de prateleira pra qualquer empresa. Você decide o que automatizar no escuro. Entrega e some.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="market-card market-card--rupto rupto-market-card reveal">
+          <div class="market-card-label">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:#2f80ed"><path d="M20 6 9 17l-5-5"></path></svg>
+            <span style="color:#2f80ed">o que a rupto faz</span>
+          </div>
+          <ul>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span>Mapeia sua operação antes de propor qualquer coisa. IA sob medida pro seu gargalo específico. A gente mostra com dados o que priorizar. Fica responsável por continuar funcionando.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Audience -->
+    <section data-rupto-section="audience">
+      <div class="audience reveal">
+        <p class="eyebrow">PARA QUEM É</p>
+        <h2 class="section-title">Se sua empresa tem processos que consomem tempo de funcionários, tempo do dono e travam o crescimento, esse diagnóstico é pra você.</h2>
+        <p class="audience-copy">Empresas que já vendem e querem vender mais com o mesmo time. Operações que dependem de atendimento, follow-up, qualificação ou agendamento. Donos que estão na operação quando deveriam estar no estratégico.</p>
+        <button class="cta-btn" type="button" data-scroll-lp>Agendar Diagnóstico <span aria-hidden="true">↗</span></button>
+        <p class="hero-support">Reunião de 30 min · Você sai com clareza sobre seu gargalo número 1</p>
+      </div>
+    </section>
+
+    <!-- Control panel -->
+    <section data-rupto-section="control">
+      <div class="panel-heading reveal">
+        <p class="eyebrow">seu controle total</p>
+        <h2>Cada métrica, cada lead. <span>Tudo num só painel.</span></h2>
+        <p>Visibilidade total sobre sua operação comercial em tempo real. Leads recebidos, qualificados, tempo de resposta, taxa de conversão, follow-ups pendentes. Você para de gerenciar no achismo e começa a decidir com dado.</p>
+      </div>
+
+      <div class="panel-grid">
+        <div class="rupto-control-card liquid-glass-card span-2 reveal">
+          <div class="metric-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></div>
+          <p class="metric-value">1.2k</p>
+          <p class="metric-title">Leads Recebidos vs Qualificados</p>
+          <p class="metric-sub">este mês</p>
+        </div>
+        <div class="rupto-control-card liquid-glass-card reveal">
+          <div class="metric-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg></div>
+          <p class="metric-value">&lt; 3s</p>
+          <p class="metric-title">Tempo Médio de Resposta</p>
+          <p class="metric-sub">últimas 24h</p>
+        </div>
+        <div class="rupto-control-card liquid-glass-card reveal">
+          <div class="metric-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg></div>
+          <p class="metric-value">34%</p>
+          <p class="metric-title">Taxa de Conversão</p>
+          <p class="metric-sub">+5pp vs anterior</p>
+        </div>
+        <div class="rupto-control-card liquid-glass-card reveal">
+          <div class="metric-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div>
+          <p class="metric-value">87</p>
+          <p class="metric-title">Conversas Ativas</p>
+          <p class="metric-sub">agora</p>
+        </div>
+        <div class="rupto-control-card liquid-glass-card reveal">
+          <div class="metric-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg></div>
+          <p class="metric-value">+18%</p>
+          <p class="metric-title">Evolução Semanal</p>
+          <p class="metric-sub">crescimento</p>
+        </div>
+        <div class="rupto-control-card liquid-glass-card span-2 reveal">
+          <div class="metric-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+          <p class="metric-value">12</p>
+          <p class="metric-title">Follow-ups Pendentes</p>
+          <p class="metric-sub">aguardando</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" aria-label="Perguntas frequentes sobre a Rupto AI">
+      <div class="faq-list">
+        <p class="eyebrow reveal">perguntas frequentes</p>
+        <h2 class="section-title reveal">Perguntas que empresários fazem <span class="text-gradient-3">antes de agendar.</span></h2>
+
+        <div itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" type="button">
+              <h3 itemprop="name">O que vocês fazem exatamente?</h3>
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Entramos na sua operação comercial, identificamos onde você está perdendo venda e usamos IA pra resolver. Começando pelo gargalo que mais impacta seu faturamento.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" type="button">
+              <h3 itemprop="name">Quanto tempo leva pra ver resultado?</h3>
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">O diagnóstico leva de 5 a 7 dias úteis. A implementação do primeiro sistema acontece nos 10 a 15 dias seguintes. O impacto começa a aparecer nas primeiras semanas de operação.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" type="button">
+              <h3 itemprop="name">Funciona pro meu tipo de empresa?</h3>
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Se sua empresa tem processos de atendimento, qualificação, follow-up ou agendamento que dependem de pessoas pra funcionar, funciona. O diagnóstico vai mostrar exatamente onde a IA faz diferença pra você.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" type="button">
+              <h3 itemprop="name">Qual a diferença de vocês pra um chatbot ou ferramenta de IA?</h3>
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">A maioria das ferramentas é genérica e não conhece sua operação. A gente faz o diagnóstico antes de implementar qualquer coisa. É a diferença entre tomar um remédio aleatório e ir ao médico primeiro.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" type="button">
+              <h3 itemprop="name">Meu problema é muito específico. Vocês conseguem resolver?</h3>
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Essa é justamente a razão do diagnóstico. Não vendemos solução pronta. Mapeamos seu problema e construímos sob medida pra ele.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-question" type="button">
+              <h3 itemprop="name">Quanto custa?</h3>
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">O diagnóstico é gratuito. A partir do que ele revelar, montamos uma proposta sob medida pra sua operação. Agende uma conversa pra entender melhor.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking / final CTA -->
+    <section id="lp-form">
+      <div class="booking-section">
+        <p class="eyebrow reveal">última chamada</p>
+        <h2 class="section-title reveal">Descubra o gargalo que está travando o <span class="text-gradient-3">crescimento da sua empresa.</span></h2>
+        <p class="section-lead reveal">Cada dia que esse gargalo continua ativo, ele drena dinheiro, tempo e energia do seu time. Você não precisa de mais ferramenta, precisa de clareza sobre onde atacar primeiro.</p>
+
+        <div class="testimonial-card reveal">
+          <div class="testimonial-header">
+            <img class="testimonial-avatar" src="assets/rupto-logo.svg" alt="Júlio Oliveira" width="48" height="48">
+            <div>
+              <p class="testimonial-name">Júlio Oliveira · Fundador Rupto AI</p>
+              <p class="testimonial-handle">@whojuliooliveira</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="booking-support">Reunião de 30 min · Você sai com clareza sobre seu gargalo número 1</p>
+
+        <div id="my-cal-inline-site"></div>
+      </div>
+    </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="assets/rupto-logo.svg" alt="Rupto AI" width="24" height="24">
+          <div class="footer-brand-text">
+            <p>IA aplicada a vendas e crescimento.</p>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/company/ruptoai/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+        <p class="footer-copy">© 2026 Rupto AI · Todos os direitos reservados</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -9,7 +9,6 @@ class Utf8StaticHandler(SimpleHTTPRequestHandler):
         ".js": "text/javascript; charset=utf-8",
         ".json": "application/json; charset=utf-8",
         ".svg": "image/svg+xml",
-        ".mp4": "video/mp4",
     }
 
     def end_headers(self):
@@ -20,5 +19,5 @@ class Utf8StaticHandler(SimpleHTTPRequestHandler):
 
 if __name__ == "__main__":
     server = ThreadingHTTPServer(("127.0.0.1", 8000), Utf8StaticHandler)
-    print("Rupto AI disponível em http://localhost:8000", flush=True)
+    print("Rupto AI disponivel em http://localhost:8000", flush=True)
     server.serve_forever()
