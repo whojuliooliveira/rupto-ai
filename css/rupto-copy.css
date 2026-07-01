@@ -3,21 +3,10 @@
   overflow: hidden;
 }
 
-.rupto-hero-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  z-index: 0;
-  pointer-events: none;
-}
-
 .rupto-hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.82);
+  background: #050505;
   z-index: 1;
 }
 
@@ -242,3 +231,26 @@ footer img[src="/assets/rupto-logo.svg"] {
   }
 }
 .rupto-hero {
+@font-face {
+  font-family: "Albert Sans";
+  src: url("../assets/fonts/albert-sans-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/inter-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("../assets/fonts/space-grotesk-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+}

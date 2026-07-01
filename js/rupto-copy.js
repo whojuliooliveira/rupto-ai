@@ -86,19 +86,6 @@
     hero.dataset.ruptoCopy = "hero";
     hero.classList.add("rupto-hero-section");
 
-    const video = document.createElement("video");
-    video.className = "rupto-hero-video";
-    video.autoplay = true;
-    video.muted = true;
-    video.loop = true;
-    video.playsInline = true;
-    video.setAttribute("playsinline", "");
-    video.preload = "auto";
-    const source = document.createElement("source");
-    source.src = "/assets/video-header.mp4";
-    source.type = "video/mp4";
-    video.appendChild(source);
-
     const overlay = document.createElement("div");
     overlay.className = "rupto-hero-overlay";
 
@@ -113,10 +100,8 @@
     `;
 
     hero.innerHTML = "";
-    hero.appendChild(video);
     hero.appendChild(overlay);
     hero.appendChild(content);
-    video.play().catch(() => {});
     return true;
   }
 
@@ -396,7 +381,7 @@
   }
 
   function applyCopy() {
-    if (document.documentElement.dataset.ruptoCopyV2 === "true") return true;
+    if (document.documentElement.dataset.ruptoCopyV2 === "true") return false;
     if (!findSection(/DIAGNÓSTICO OPERACIONAL|DIAGNÓSTICO COMERCIAL/))
       return false;
 
@@ -452,14 +437,26 @@
         el.closest("a, li, span, p") ? el.closest("a, li, span, p").remove() : el.remove();
       }
     });
+
+    if (typeof window.updateNavbarCta === "function") {
+      window.updateNavbarCta(node);
+    }
+    if (typeof window.updateNavbarSocial === "function") {
+      window.updateNavbarSocial(node);
+    }
   }
 
+  let observerStarted = false;
+
   function start() {
-    if (applyCopy()) {
-      updateNavbarAndFooter();
-    }
+    applyCopy();
+    if (observerStarted || !document.body) return;
+    observerStarted = true;
+
     const observer = new MutationObserver((mutations) => {
-      applyCopy();
+      if (document.documentElement.dataset.ruptoCopyV2 !== "true") {
+        applyCopy();
+      }
       mutations.forEach((m) => {
         m.addedNodes.forEach((node) => patchNode(node));
       });

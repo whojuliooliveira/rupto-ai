@@ -37,151 +37,14 @@
         height: 100%;
         overflow: visible;
       }
-
-      .solo-founder-profile {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-
-      .solo-founder-mark {
-        width: 44px;
-        height: 44px;
-        padding: 0;
-        border-radius: 999px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        background: rgba(255, 255, 255, 0.035);
-        object-fit: cover;
-      }
-
-      .solo-founder-name {
-        color: #ededed;
-        font: 600 14px/1.2 "Inter", sans-serif;
-      }
-
-      .solo-founder-role {
-        margin-top: 4px;
-        color: #666;
-        font: 400 12px/1.3 "Inter", sans-serif;
-      }
-
-      .solo-business-card {
-        max-width: 920px;
-        margin: 0 auto;
-        padding: clamp(32px, 7vw, 72px);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 28px;
-        background:
-          radial-gradient(circle at 85% 15%, rgba(47, 128, 237, 0.12), transparent 35%),
-          rgba(255, 255, 255, 0.018);
-        overflow: hidden;
-      }
-
-      .solo-business-card .solo-eyebrow {
-        margin-bottom: 22px;
-        color: #60a5fa;
-        font: 500 11px/1 "Inter", sans-serif;
-        letter-spacing: 0.18em;
-      }
-
-      .solo-business-card h2 {
-        max-width: 700px;
-        margin: 0 0 24px;
-        color: #ededed;
-        font: 700 clamp(30px, 5vw, 56px)/1.03 "Space Grotesk", sans-serif;
-        letter-spacing: -0.04em;
-      }
-
-      .solo-business-card h2 span {
-        color: #777;
-      }
-
-      .solo-business-card > p:last-child {
-        max-width: 630px;
-        margin: 0;
-        color: #888;
-        font: 400 15px/1.75 "Inter", sans-serif;
-      }
-
-      .solo-calendar-owner {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        margin-bottom: 12px;
-        color: #888;
-        font: 500 13px/1.2 "Inter", sans-serif;
-      }
-
-      .solo-calendar-owner img {
-        width: 34px;
-        height: 34px;
-        padding: 0;
-        border-radius: 999px;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        background: rgba(255, 255, 255, 0.03);
-        object-fit: cover;
-      }
-
-      .new-hero-content {
-        width: min(920px, 100%);
-        margin: 0 auto;
-        padding: 0 24px 96px;
-        text-align: center;
-      }
-
-      .new-hero-eyebrow {
-        margin: 0 0 24px;
-        color: #60a5fa;
-        font: 500 11px/1.4 "Inter", sans-serif;
-        letter-spacing: 0.16em;
-      }
-
-      .new-hero-title {
-        margin: 0 auto 28px;
-        color: #ededed;
-        font: 700 clamp(42px, 7vw, 78px)/0.98 "Space Grotesk", sans-serif;
-        letter-spacing: -0.055em;
-        text-wrap: balance;
-      }
-
-      .new-hero-copy {
-        max-width: 700px;
-        margin: 0 auto 34px;
-        color: #999;
-        font: 400 clamp(16px, 2vw, 19px)/1.65 "Inter", sans-serif;
-      }
-
-      .new-primary-cta {
-        padding: 15px 28px;
-        border: 0;
-        border-radius: 999px;
-        background: #fff;
-        color: #050505;
-        cursor: pointer;
-        font: 600 14px/1 "Inter", sans-serif;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-      }
-
-      .new-primary-cta:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 12px 36px rgba(255, 255, 255, 0.12);
-      }
-
-      .new-hero-support {
-        margin: 18px 0 0;
-        color: #555;
-        font: 400 12px/1.5 "Inter", sans-serif;
-      }
     </style>
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/assets/rupto-favicon.svg">
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -319,273 +182,6 @@
         window.location.replace("/");
       }
 
-      function applyNewSiteCopy() {
-        const sections = Array.from(document.querySelectorAll("section"));
-        const sourceHero = sections.find(function (section) {
-          return /DIAGNÓSTICO OPERACIONAL/.test(section.textContent);
-        });
-        if (!sourceHero || document.documentElement.dataset.newCopyApplied === "true") return;
-        document.documentElement.dataset.newCopyApplied = "true";
-
-        const findSection = function (pattern) {
-          return sections.find(function (section) { return pattern.test(section.textContent); });
-        };
-        const replaceLeaf = function (root, oldText, newText) {
-          if (!root) return;
-          Array.from(root.querySelectorAll("*")).forEach(function (element) {
-            if (element.children.length === 0 && element.textContent.trim() === oldText) {
-              element.textContent = newText;
-            }
-          });
-        };
-
-        const hero = sourceHero;
-        if (hero && hero.dataset.copyVersion !== "commercial-v1") {
-          hero.dataset.copyVersion = "commercial-v1";
-          hero.innerHTML = [
-            '<div class="new-hero-content">',
-            '<p class="new-hero-eyebrow">DIAGNÓSTICO COMERCIAL · IA APLICADA A VENDAS E CRESCIMENTO</p>',
-            '<h1 class="new-hero-title">Sua empresa vende, mas perde venda todo dia por falta de estrutura.</h1>',
-            '<p class="new-hero-copy">Identificamos onde sua operação comercial está perdendo venda e usamos IA pra resolver, começando pelo gargalo que mais custa dinheiro.</p>',
-            '<button class="new-primary-cta" type="button" data-scroll-lp>Agendar Diagnóstico</button>',
-            '<p class="new-hero-support">Reunião de 30 min · Você sai sabendo exatamente onde está perdendo venda</p>',
-            '</div>'
-          ].join("");
-        }
-
-        [
-          /EMPRESAS QUE JÁ PASSARAM PELO DIAGNÓSTICO RUPTO AI/,
-          /CASE REAL/,
-          /IA \+ Humano é melhor que só humano/,
-          /RESULTADOS REAIS/
-        ].forEach(function (pattern) {
-          const oldSection = findSection(pattern);
-          if (oldSection) oldSection.remove();
-        });
-
-        const problem = findSection(/A maioria das empresas está usando IA do jeito errado/);
-        if (problem) {
-          const heading = problem.querySelector("h2");
-          if (heading) heading.textContent = "A maioria das empresas implementa IA do jeito errado.";
-          replaceLeaf(problem,
-            "Elas contratam um chatbot. Assinam uma ferramenta nova. Automatizam um processo aleatório. E não muda nada.",
-            "Compra um chatbot. Assina uma ferramenta nova. Automatiza um processo aleatório. E não muda nada.");
-          replaceLeaf(problem, "Sabe por quê?", "Sabe por quê?");
-          replaceLeaf(problem,
-            "Você sente que está apagando incêndios o dia inteiro, sem tempo para pensar estrategicamente.",
-            "Você passa o dia apagando incêndio sem tempo pra pensar no que realmente importa.");
-          replaceLeaf(problem, "Time sobrecarregado", "Time no limite");
-          replaceLeaf(problem,
-            "Seu time está no limite, mas contratar mais pessoas não resolve, só aumenta o custo fixo.",
-            "Contratar mais gente não resolve, só aumenta custo fixo. O problema está no processo, não no headcount.");
-          replaceLeaf(problem,
-            "Você já investiu em ferramentas de IA, automações e chatbots, mas não viu resultado real.",
-            "Você já tentou chatbot, automação, ferramenta nova. Nada gerou resultado real porque ninguém mapeou o problema certo antes de implementar.");
-          replaceLeaf(problem,
-            "Você acha que precisa de mais leads e tráfego, mas o problema pode estar em outro lugar.",
-            "Você acha que precisa de mais lead e mais tráfego. Mas o problema pode estar no atendimento, no follow-up, ou no funil que vaza silenciosamente toda semana.");
-        }
-
-        const howItWorks = findSection(/Antes de implementar qualquer IA, nós descobrimos/);
-        if (howItWorks) {
-          const heading = howItWorks.querySelector("h2");
-          if (heading) heading.textContent = "Antes de implementar qualquer IA, a gente descobre onde sua empresa está perdendo venda.";
-          replaceLeaf(howItWorks,
-            "Nosso método é simples: diagnóstico primeiro, implementação depois. Assim, cada real investido em IA vai direto para onde gera mais resultado.",
-            "Diagnóstico primeiro. Implementação depois. Assim cada real investido vai direto pra onde gera resultado.");
-          replaceLeaf(howItWorks, "Diagnóstico Operacional", "AI Audit");
-          replaceLeaf(howItWorks,
-            "Entramos na sua operação e mapeamos cada processo com inteligência artificial. Identificamos o exato gargalo que está drenando mais tempo, dinheiro e energia do seu time.",
-            "Entramos na sua operação comercial e mapeamos onde o processo está quebrando. Você sai com clareza sobre o gargalo que mais custa dinheiro, antes de qualquer implementação.");
-          replaceLeaf(howItWorks, "Mapeamento de Prioridades", "Priorização");
-          replaceLeaf(howItWorks,
-            "Organizamos os processos por nível de criticidade. Você descobre, com dados, qual problema resolver primeiro para ter o maior impacto no faturamento.",
-            "Organizamos o que resolver primeiro com base no impacto direto no faturamento. Sem achismo, sem implementar coisa que não move o ponteiro.");
-          replaceLeaf(howItWorks, "Implementação de Agentes de IA", "Implementação com IA");
-          replaceLeaf(howItWorks,
-            "Criamos e implementamos agentes de IA sob medida para cada processo crítico. Começando pelo gargalo #1 e expandindo conforme os resultados aparecem.",
-            "Montamos e operamos a solução sob medida pra cada gargalo identificado. Começando pelo mais crítico e expandindo conforme o resultado aparece.");
-          Array.from(howItWorks.querySelectorAll("*")).forEach(function (element) {
-            if (element.children.length === 0 && /^PILAR 0[1-3]$/.test(element.textContent.trim())) {
-              element.remove();
-            }
-            if (element.children.length === 0 && element.textContent.trim().startsWith("Isso não é teoria.")) {
-              element.remove();
-            }
-          });
-        }
-
-        const market = findSection(/MERCADO VS CLICKA/);
-        if (market) {
-          replaceLeaf(market, "MERCADO VS CLICKA", "MERCADO VS RUPTO");
-          const heading = market.querySelector("h2");
-          if (heading) heading.textContent = "O mercado vende ferramenta. A Rupto implementa inteligência.";
-          replaceLeaf(market, "O QUE O MERCADO FAZ", "O que o mercado faz:");
-          replaceLeaf(market, "O QUE A CLICKA FAZ", "O que a Rupto faz:");
-          const lists = market.querySelectorAll("ul");
-          if (lists[0]) {
-            lists[0].innerHTML = '<li>Vende solução genérica sem entender sua operação. IA de prateleira pra qualquer empresa. Você decide o que automatizar no escuro. Entrega e some.</li>';
-          }
-          if (lists[1]) {
-            lists[1].innerHTML = '<li>Mapeia sua operação antes de propor qualquer coisa. IA sob medida pro seu gargalo específico. A gente mostra com dados o que priorizar. Fica responsável por continuar funcionando.</li>';
-          }
-        }
-
-        const audience = findSection(/Toda empresa que fatura tem gargalos/);
-        if (audience && audience.dataset.copyVersion !== "commercial-v1") {
-          audience.dataset.copyVersion = "commercial-v1";
-          audience.innerHTML = [
-            '<div style="max-width:860px;margin:0 auto;text-align:center">',
-            '<p style="margin:0 0 18px;color:#555;font:500 11px/1 Inter,sans-serif;letter-spacing:.16em">PARA QUEM É</p>',
-            '<h2 style="margin:0 auto 24px;color:#ededed;font:700 clamp(30px,5vw,52px)/1.08 Space Grotesk,sans-serif;letter-spacing:-.04em">Se sua empresa tem processos que consomem tempo de funcionários, tempo do dono e travam o crescimento, esse diagnóstico é pra você.</h2>',
-            '<p style="max-width:720px;margin:0 auto 32px;color:#888;font:400 16px/1.7 Inter,sans-serif">Empresas que já vendem e querem vender mais com o mesmo time. Operações que dependem de atendimento, follow-up, qualificação ou agendamento. Donos que estão na operação quando deveriam estar no estratégico.</p>',
-            '<button class="new-primary-cta" type="button" data-scroll-lp>Agendar Diagnóstico</button>',
-            '<p class="new-hero-support">Reunião de 30 min · Você sai com clareza sobre seu gargalo número 1</p>',
-            '</div>'
-          ].join("");
-        }
-
-        const panel = findSection(/Cada métrica, cada lead/);
-        if (panel) {
-          const heading = panel.querySelector("h2");
-          if (heading) heading.textContent = "Cada métrica, cada lead. Tudo num só painel.";
-          replaceLeaf(panel,
-            "Visibilidade total sobre a operação do seu agente, em tempo real.",
-            "Visibilidade total sobre sua operação comercial em tempo real. Leads recebidos, qualificados, tempo de resposta, taxa de conversão, follow-ups pendentes. Você para de gerenciar no achismo e começa a decidir com dado.");
-        }
-
-        const faq = document.getElementById("faq");
-        if (faq) {
-          const replacements = [
-            ["Entramos na sua empresa, mapeamos todos os processos com IA, identificamos qual gargalo está te custando mais dinheiro, e implementamos agentes de inteligência artificial sob medida para resolver, começando pelo mais crítico.",
-             "Entramos na sua operação comercial, identificamos onde você está perdendo venda e usamos IA pra resolver. Começando pelo gargalo que mais impacta seu faturamento."],
-            ["Quanto tempo leva para ver resultado?", "Quanto tempo leva pra ver resultado?"],
-            ["A fase de diagnóstico dura entre 5 a 7 dias úteis. A implementação do primeiro agente de IA acontece nos 10 a 15 dias seguintes. Nossos clientes relatam impacto mensurável em até 30 dias.",
-             "O diagnóstico leva de 5 a 7 dias úteis. A implementação do primeiro sistema acontece nos 10 a 15 dias seguintes. O impacto começa a aparecer nas primeiras semanas de operação."],
-            ["Funciona para o meu tipo de empresa?", "Funciona pro meu tipo de empresa?"],
-            ["Se a sua empresa tem processos que consomem tempo de pessoas, atendimento, follow-up, qualificação, agendamento, gestão, funciona. Já implementamos em clínicas, construtoras, escritórios, e-commerces e dezenas de outros segmentos.",
-             "Se sua empresa tem processos de atendimento, qualificação, follow-up ou agendamento que dependem de pessoas pra funcionar, funciona. O diagnóstico vai mostrar exatamente onde a IA faz diferença pra você."],
-            ["Qual a diferença de vocês para um chatbot ou ferramenta de IA?", "Qual a diferença de vocês pra um chatbot ou ferramenta de IA?"],
-            ["A maioria das ferramentas de IA é genérica, não conhece sua operação, seus dados, suas dores. Nós fazemos um diagnóstico completo antes de implementar qualquer coisa. É a diferença entre tomar um remédio aleatório e ir ao médico primeiro.",
-             "A maioria das ferramentas é genérica e não conhece sua operação. A gente faz o diagnóstico antes de implementar qualquer coisa. É a diferença entre tomar um remédio aleatório e ir ao médico primeiro."],
-            ["Meu problema é muito específico. Vocês conseguem resolver?", "Meu problema é muito específico. Vocês conseguem resolver?"],
-            ["Essa é justamente a razão pela qual fazemos o diagnóstico antes. Não vendemos solução pronta, mapeamos o SEU problema e construímos a solução sob medida para ele.",
-             "Essa é justamente a razão do diagnóstico. Não vendemos solução pronta. Mapeamos seu problema e construímos sob medida pra ele."],
-            ["Qual o investimento?", "Quanto custa?"],
-            ["Depende da complexidade da sua operação. O diagnóstico inicial é gratuito e nele você já recebe clareza sobre o gargalo principal. A partir daí, montamos uma proposta sob medida. Agende uma conversa para entender melhor.",
-             "O diagnóstico é gratuito. A partir do que ele revelar, montamos uma proposta sob medida pra sua operação. Agende uma conversa pra entender melhor."]
-          ];
-          replacements.forEach(function (pair) { replaceLeaf(faq, pair[0], pair[1]); });
-          Array.from(faq.querySelectorAll("*")).forEach(function (element) {
-            if (element.children.length === 0 && element.textContent.trim() === "Perguntas que empresários fazem antes de agendar.") {
-              element.remove();
-            }
-          });
-        }
-
-        const booking = document.getElementById("lp-form");
-        if (booking) {
-          replaceLeaf(booking,
-            "Cada dia que esse gargalo continua ativo, ele drena dinheiro, tempo e energia do seu time. Você não precisa de mais ferramentas, precisa de clareza sobre onde atacar primeiro.",
-            "Cada dia que esse gargalo continua ativo, ele drena dinheiro, tempo e energia do seu time. Você não precisa de mais ferramenta, precisa de clareza sobre onde atacar primeiro.");
-          replaceLeaf(booking, "Julio Oliveira · Fundador", "Júlio Oliveira · Fundador Rupto AI");
-          replaceLeaf(booking,
-            "Reunião de 30 min · Você sai com clareza sobre o seu gargalo #1",
-            "Reunião de 30 min · Você sai com clareza sobre seu gargalo número 1");
-          const instagram = booking.querySelector('a[href="https://www.instagram.com/clicka.ia"]');
-          if (instagram) instagram.remove();
-        }
-
-        const footer = document.querySelector("footer");
-        if (footer) {
-          replaceLeaf(footer,
-            "Diagnóstico operacional e implementação de IA sob medida para empresas.",
-            "IA aplicada a vendas e crescimento.");
-          replaceLeaf(footer,
-            "© 2026 Rupto AI, Brasília, DF · Todos os direitos reservados",
-            "© 2026 Rupto AI · Todos os direitos reservados");
-          Array.from(footer.querySelectorAll("*")).forEach(function (element) {
-            if (element.children.length === 0 && element.textContent.trim() === "Termos de Uso · Política de Privacidade") {
-              element.remove();
-            }
-          });
-          const footerLinkedIn = Array.from(footer.querySelectorAll("a")).find(function (link) {
-            return link.textContent.trim() === "LinkedIn";
-          });
-          if (footerLinkedIn) footerLinkedIn.href = "https://www.linkedin.com/company/ruptoai/";
-        }
-
-        const soloCard = document.querySelector(".solo-business-card");
-        if (soloCard) {
-          const eyebrow = soloCard.querySelector(".solo-eyebrow");
-          const heading = soloCard.querySelector("h2");
-          const paragraph = soloCard.querySelector("p:last-child");
-          if (eyebrow) eyebrow.textContent = "POR QUE A RUPTO";
-          if (heading) heading.innerHTML = "Uma empresa enxuta.<br><span>Uma pessoa responsável.</span>";
-          if (paragraph) paragraph.textContent = "A Rupto AI é construída e operada por Júlio Oliveira. Do diagnóstico à implementação, você fala diretamente com quem projeta e executa cada solução. Sem intermediário, sem suporte genérico, sem você precisar explicar o problema duas vezes.";
-          if (!soloCard.querySelector(".solo-founder-signature")) {
-            const signature = document.createElement("p");
-            signature.className = "solo-founder-signature";
-            signature.style.cssText = "margin:0 0 18px;color:#ededed;font:600 14px/1.5 Inter,sans-serif";
-            signature.innerHTML = "Júlio Oliveira<br><span style='color:#666;font-weight:400'>Fundador · Rupto AI</span>";
-            paragraph.before(signature);
-          }
-        }
-
-        document.querySelectorAll("[data-scroll-lp]").forEach(function (button) {
-          if (button.dataset.bound === "true") return;
-          button.dataset.bound = "true";
-          button.addEventListener("click", function () {
-            const target = document.getElementById("lp-form");
-            if (target) target.scrollIntoView({ behavior: "smooth" });
-          });
-        });
-      }
-
-      function updateSoloBusinessIdentity() {
-        const solutionSection = document.getElementById("lp-solution");
-        const oldProfile = solutionSection && Array.from(solutionSection.querySelectorAll("header"))
-          .find(function (header) { return /fidel|noleto/i.test(header.textContent); });
-
-        if (oldProfile) {
-          oldProfile.innerHTML = [
-            '<div class="solo-founder-profile">',
-            '<div>',
-            '<div class="solo-founder-name">Júlio Oliveira</div>',
-            '<div class="solo-founder-role">Fundador · Rupto AI</div>',
-            '</div>',
-            '</div>'
-          ].join("");
-        }
-
-        const creatorsSection = Array.from(document.querySelectorAll("section")).find(function (section) {
-          return /OS CRIADORES POR TRÁS DA CLICKA/i.test(section.textContent);
-        });
-
-        if (creatorsSection) {
-          creatorsSection.innerHTML = [
-            '<div class="solo-business-card">',
-            '<p class="solo-eyebrow">POR QUE A RUPTO</p>',
-            '<h2>Uma empresa enxuta.<br><span>Uma pessoa responsável.</span></h2>',
-            '<p>A Rupto AI é construída e operada por Júlio Oliveira. Do diagnóstico à implementação, você fala diretamente com quem projeta e executa cada solução. Sem intermediário, sem suporte genérico, sem você precisar explicar o problema duas vezes.</p>',
-            '</div>'
-          ].join("");
-        }
-
-        const bookingSection = document.getElementById("lp-form");
-        const oldOwners = bookingSection && Array.from(bookingSection.querySelectorAll("div"))
-          .find(function (element) {
-            return element.classList.contains("mb-3") && /fidel|noleto/i.test(element.textContent);
-          });
-
-        if (oldOwners) {
-          oldOwners.className = "solo-calendar-owner";
-          oldOwners.innerHTML = [
-            '<span>Júlio Oliveira · Fundador Rupto AI</span>'
-          ].join("");
-        }
-      }
-
       function updateNavbarCta(root = document) {
         const buttons = [];
         if (root.matches && root.matches("button")) {
@@ -632,33 +228,14 @@
         });
       }
 
-      const navbarObserver = new MutationObserver(function (mutations) {
-        mutations.forEach(function (mutation) {
-          mutation.addedNodes.forEach(function (node) {
-            if (node.nodeType === Node.ELEMENT_NODE) {
-              updateNavbarCta(node);
-              updateNavbarSocial(node);
-            }
-          });
-        });
-      });
-
       window.addEventListener("load", function() {
-        updateSoloBusinessIdentity();
-        applyNewSiteCopy();
         updateNavbarCta();
         updateNavbarSocial();
-        document.addEventListener("click", function () {
-          setTimeout(function () {
-            updateNavbarCta();
-            updateNavbarSocial();
-          }, 0);
-        });
       });
     </script>
     <link rel="stylesheet" crossorigin="" href="css/index-CQdIASk2.css">
     <link rel="stylesheet" href="css/rupto-copy.css">
-  <script defer="" src="js/~flock.js" data-proxy-url="/~api/analytics"></script><script defer="" src="js/events.js" data-artifact-kind="cf_deployment_id" data-artifact-id="6f944749-6cd0-4342-8a4e-2da6a92d8733" data-commit-sha="2028f1e1875e851d2317e3a3a22c4978bc9e0c02" data-context-token="v1.eyJwcm9qZWN0X2lkIjoiNzhjNWU5ZTUtZmY5NS00NTUwLWI0MjAtMjZkNmEyMDVmOTg4IiwiYXJ0aWZhY3Rfa2luZCI6ImNmX2RlcGxveW1lbnRfaWQiLCJhcnRpZmFjdF9pZCI6IjZmOTQ0NzQ5LTZjZDAtNDM0Mi04YTRlLTJkYTZhOTJkODczMyIsImNvbW1pdF9zaGEiOiIyMDI4ZjFlMTg3NWU4NTFkMjMxN2UzYTNhMjJjNDk3OGJjOWUwYzAyIiwiZXhwIjoxNzgyNzM2NjQzfQ.b9Zxe40txemEU4i7Sl3oULVv3CtLeROkW_J6klkXNG0"></script></head>
+</head>
 
   <body>
     <div id="root"></div>
@@ -667,14 +244,18 @@
     <script src="js/rupto-copy.js?v=11" charset="UTF-8"></script>
 
     <script type="text/javascript">
-      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-      Cal("init", "site", {origin:"https://app.cal.com"});
-      Cal.config = Cal.config || {};
-      Cal.config.forwardQueryParams = true;
+      function initCal() {
+        if (window.Cal) return;
+        (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+        Cal("init", "site", {origin:"https://app.cal.com"});
+        Cal.config = Cal.config || {};
+        Cal.config.forwardQueryParams = true;
+      }
 
       function mountCal() {
         const section = document.getElementById("lp-form");
         if (!section || document.getElementById("my-cal-inline-site")) return;
+        initCal();
 
         section.querySelectorAll("form, .solo-calendar-owner, .mb-3").forEach(function(el) {
           let node = el;
@@ -711,10 +292,31 @@
         });
       }
 
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", function() { setTimeout(mountCal, 300); });
-      } else {
-        setTimeout(mountCal, 300);
+      function observeCalSection() {
+        const section = document.getElementById("lp-form");
+        if (!section) return;
+        if (!("IntersectionObserver" in window)) return;
+        const observer = new IntersectionObserver(function (entries) {
+          if (!entries.some(function (entry) { return entry.isIntersecting; })) return;
+          observer.disconnect();
+          mountCal();
+        }, { rootMargin: "1200px 0px" });
+        observer.observe(section);
       }
+
+      function scheduleCalObserver() {
+        setTimeout(observeCalSection, 500);
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", scheduleCalObserver, { once: true });
+      } else {
+        scheduleCalObserver();
+      }
+
+      document.addEventListener("click", function (event) {
+        if (!event.target.closest("[data-scroll-lp], [data-rupto-scroll]")) return;
+        mountCal();
+      });
     </script>
 </body></html>
