@@ -181,7 +181,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -550,7 +551,7 @@
         if (oldProfile) {
           oldProfile.innerHTML = [
             '<div class="solo-founder-profile">',
-            '<img class="solo-founder-mark" src="/assets/julio-oliveira.png" alt="Júlio Oliveira">',
+            '<img class="solo-founder-mark" src="/assets/julio-oliveira-1200.jpg" alt="Júlio Oliveira" width="1200" height="1200" loading="lazy" decoding="async">',
             '<div>',
             '<div class="solo-founder-name">Júlio Oliveira</div>',
             '<div class="solo-founder-role">Fundador · Rupto AI</div>',
@@ -582,7 +583,7 @@
         if (oldOwners) {
           oldOwners.className = "solo-calendar-owner";
           oldOwners.innerHTML = [
-            '<img src="/assets/julio-oliveira.png" alt="Júlio Oliveira">',
+            '<img src="/assets/julio-oliveira-1200.jpg" alt="Júlio Oliveira" width="1200" height="1200" loading="lazy" decoding="async">',
             '<span>Júlio Oliveira · Fundador Rupto AI</span>'
           ].join("");
         }
@@ -660,23 +661,26 @@
     </script>
     <link rel="stylesheet" crossorigin="" href="css/index-CQdIASk2.css">
     <link rel="stylesheet" href="css/rupto-copy.css">
-  <script defer="" src="js/~flock.js" data-proxy-url="/~api/analytics"></script><script defer="" src="js/events.js" data-artifact-kind="cf_deployment_id" data-artifact-id="6f944749-6cd0-4342-8a4e-2da6a92d8733" data-commit-sha="2028f1e1875e851d2317e3a3a22c4978bc9e0c02" data-context-token="v1.eyJwcm9qZWN0X2lkIjoiNzhjNWU5ZTUtZmY5NS00NTUwLWI0MjAtMjZkNmEyMDVmOTg4IiwiYXJ0aWZhY3Rfa2luZCI6ImNmX2RlcGxveW1lbnRfaWQiLCJhcnRpZmFjdF9pZCI6IjZmOTQ0NzQ5LTZjZDAtNDM0Mi04YTRlLTJkYTZhOTJkODczMyIsImNvbW1pdF9zaGEiOiIyMDI4ZjFlMTg3NWU4NTFkMjMxN2UzYTNhMjJjNDk3OGJjOWUwYzAyIiwiZXhwIjoxNzgyNzM2NjQzfQ.b9Zxe40txemEU4i7Sl3oULVv3CtLeROkW_J6klkXNG0"></script></head>
+  </head>
 
   <body>
     <div id="root"></div>
 
 
-    <script src="js/rupto-copy.js?v=11" charset="UTF-8"></script>
+    <script src="js/rupto-copy.js?v=12" charset="UTF-8"></script>
 
     <script type="text/javascript">
-      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-      Cal("init", "site", {origin:"https://app.cal.com"});
-      Cal.config = Cal.config || {};
-      Cal.config.forwardQueryParams = true;
+      let calMounted = false;
 
       function mountCal() {
         const section = document.getElementById("lp-form");
-        if (!section || document.getElementById("my-cal-inline-site")) return;
+        if (!section || calMounted) return;
+        calMounted = true;
+
+        (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+        Cal("init", "site", {origin:"https://app.cal.com"});
+        Cal.config = Cal.config || {};
+        Cal.config.forwardQueryParams = true;
 
         section.querySelectorAll("form, .solo-calendar-owner, .mb-3").forEach(function(el) {
           let node = el;
@@ -713,10 +717,30 @@
         });
       }
 
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", function() { setTimeout(mountCal, 300); });
-      } else {
-        setTimeout(mountCal, 300);
+      function watchBookingSection() {
+        const section = document.getElementById("lp-form");
+        if (!section) return false;
+
+        if (!("IntersectionObserver" in window)) {
+          mountCal();
+          return true;
+        }
+
+        const observer = new IntersectionObserver(function(entries) {
+          if (entries.some(function(entry) { return entry.isIntersecting; })) {
+            observer.disconnect();
+            mountCal();
+          }
+        }, { rootMargin: "600px 0px" });
+        observer.observe(section);
+        return true;
+      }
+
+      if (!watchBookingSection()) {
+        const bookingWatcher = new MutationObserver(function() {
+          if (watchBookingSection()) bookingWatcher.disconnect();
+        });
+        bookingWatcher.observe(document.body, { childList: true, subtree: true });
       }
     </script>
 </body></html>

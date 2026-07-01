@@ -1,6 +1,9 @@
 .rupto-hero-section {
   position: relative;
   overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(38, 105, 199, 0.16), transparent 38%),
+    #020304;
 }
 
 .rupto-hero-video {
@@ -237,8 +240,11 @@ footer img[src="/assets/rupto-logo.svg"] {
 }
 
 @media (max-width: 720px) {
+  .rupto-hero-video {
+    display: none;
+  }
+
   .rupto-founder-grid {
     grid-template-columns: 1fr;
   }
 }
-.rupto-hero {
