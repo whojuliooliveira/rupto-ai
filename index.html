@@ -178,6 +178,9 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/assets/rupto-favicon.svg">
 
+    <!-- Hero LCP hints -->
+    <link rel="preload" as="image" href="/assets/video-poster.jpg" fetchpriority="high">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -550,7 +553,7 @@
         if (oldProfile) {
           oldProfile.innerHTML = [
             '<div class="solo-founder-profile">',
-            '<img class="solo-founder-mark" src="/assets/julio-oliveira.png" alt="Júlio Oliveira">',
+            '<picture><source srcset="/assets/julio-oliveira.webp" type="image/webp"><img class="solo-founder-mark" src="/assets/julio-oliveira.png" alt="Júlio Oliveira" width="44" height="44" loading="lazy" decoding="async"></picture>',
             '<div>',
             '<div class="solo-founder-name">Júlio Oliveira</div>',
             '<div class="solo-founder-role">Fundador · Rupto AI</div>',
@@ -582,7 +585,7 @@
         if (oldOwners) {
           oldOwners.className = "solo-calendar-owner";
           oldOwners.innerHTML = [
-            '<img src="/assets/julio-oliveira.png" alt="Júlio Oliveira">',
+            '<picture><source srcset="/assets/julio-oliveira.webp" type="image/webp"><img src="/assets/julio-oliveira.png" alt="Júlio Oliveira" width="32" height="32" loading="lazy" decoding="async"></picture>',
             '<span>Júlio Oliveira · Fundador Rupto AI</span>'
           ].join("");
         }

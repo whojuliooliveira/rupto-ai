@@ -93,7 +93,9 @@
     video.loop = true;
     video.playsInline = true;
     video.setAttribute("playsinline", "");
-    video.preload = "auto";
+    video.preload = "none";
+    video.poster = "/assets/video-poster.jpg";
+    video.setAttribute("fetchpriority", "high");
     const source = document.createElement("source");
     source.src = "/assets/video-header.mp4";
     source.type = "video/mp4";
