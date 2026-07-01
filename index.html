@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="pt-BR"><head>
+<!DOCTYPE html><html lang="pt-BR" class="dark" style="color-scheme: dark;"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rupto AI — IA aplicada a vendas e crescimento</title>
@@ -184,7 +184,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -315,361 +315,31 @@
       ]
     }
     </script>
-    <script type="module" crossorigin="" src="js/index-CTO_dGAt.js"></script>
-    <script type="text/javascript">
-
-      if (window.location.pathname === "/mentoria") {
-        window.location.replace("/");
-      }
-
-      function applyNewSiteCopy() {
-        const sections = Array.from(document.querySelectorAll("section"));
-        const sourceHero = sections.find(function (section) {
-          return /DIAGNÓSTICO OPERACIONAL/.test(section.textContent);
-        });
-        if (!sourceHero || document.documentElement.dataset.newCopyApplied === "true") return;
-        document.documentElement.dataset.newCopyApplied = "true";
-
-        const findSection = function (pattern) {
-          return sections.find(function (section) { return pattern.test(section.textContent); });
-        };
-        const replaceLeaf = function (root, oldText, newText) {
-          if (!root) return;
-          Array.from(root.querySelectorAll("*")).forEach(function (element) {
-            if (element.children.length === 0 && element.textContent.trim() === oldText) {
-              element.textContent = newText;
-            }
-          });
-        };
-
-        const hero = sourceHero;
-        if (hero && hero.dataset.copyVersion !== "commercial-v1") {
-          hero.dataset.copyVersion = "commercial-v1";
-          hero.innerHTML = [
-            '<div class="new-hero-content">',
-            '<p class="new-hero-eyebrow">DIAGNÓSTICO COMERCIAL · IA APLICADA A VENDAS E CRESCIMENTO</p>',
-            '<h1 class="new-hero-title">Sua empresa vende, mas perde venda todo dia por falta de estrutura.</h1>',
-            '<p class="new-hero-copy">Identificamos onde sua operação comercial está perdendo venda e usamos IA pra resolver, começando pelo gargalo que mais custa dinheiro.</p>',
-            '<button class="new-primary-cta" type="button" data-scroll-lp>Agendar Diagnóstico</button>',
-            '<p class="new-hero-support">Reunião de 30 min · Você sai sabendo exatamente onde está perdendo venda</p>',
-            '</div>'
-          ].join("");
-        }
-
-        [
-          /EMPRESAS QUE JÁ PASSARAM PELO DIAGNÓSTICO RUPTO AI/,
-          /CASE REAL/,
-          /IA \+ Humano é melhor que só humano/,
-          /RESULTADOS REAIS/
-        ].forEach(function (pattern) {
-          const oldSection = findSection(pattern);
-          if (oldSection) oldSection.remove();
-        });
-
-        const problem = findSection(/A maioria das empresas está usando IA do jeito errado/);
-        if (problem) {
-          const heading = problem.querySelector("h2");
-          if (heading) heading.textContent = "A maioria das empresas implementa IA do jeito errado.";
-          replaceLeaf(problem,
-            "Elas contratam um chatbot. Assinam uma ferramenta nova. Automatizam um processo aleatório. E não muda nada.",
-            "Compra um chatbot. Assina uma ferramenta nova. Automatiza um processo aleatório. E não muda nada.");
-          replaceLeaf(problem, "Sabe por quê?", "Sabe por quê?");
-          replaceLeaf(problem,
-            "Você sente que está apagando incêndios o dia inteiro, sem tempo para pensar estrategicamente.",
-            "Você passa o dia apagando incêndio sem tempo pra pensar no que realmente importa.");
-          replaceLeaf(problem, "Time sobrecarregado", "Time no limite");
-          replaceLeaf(problem,
-            "Seu time está no limite, mas contratar mais pessoas não resolve, só aumenta o custo fixo.",
-            "Contratar mais gente não resolve, só aumenta custo fixo. O problema está no processo, não no headcount.");
-          replaceLeaf(problem,
-            "Você já investiu em ferramentas de IA, automações e chatbots, mas não viu resultado real.",
-            "Você já tentou chatbot, automação, ferramenta nova. Nada gerou resultado real porque ninguém mapeou o problema certo antes de implementar.");
-          replaceLeaf(problem,
-            "Você acha que precisa de mais leads e tráfego, mas o problema pode estar em outro lugar.",
-            "Você acha que precisa de mais lead e mais tráfego. Mas o problema pode estar no atendimento, no follow-up, ou no funil que vaza silenciosamente toda semana.");
-        }
-
-        const howItWorks = findSection(/Antes de implementar qualquer IA, nós descobrimos/);
-        if (howItWorks) {
-          const heading = howItWorks.querySelector("h2");
-          if (heading) heading.textContent = "Antes de implementar qualquer IA, a gente descobre onde sua empresa está perdendo venda.";
-          replaceLeaf(howItWorks,
-            "Nosso método é simples: diagnóstico primeiro, implementação depois. Assim, cada real investido em IA vai direto para onde gera mais resultado.",
-            "Diagnóstico primeiro. Implementação depois. Assim cada real investido vai direto pra onde gera resultado.");
-          replaceLeaf(howItWorks, "Diagnóstico Operacional", "AI Audit");
-          replaceLeaf(howItWorks,
-            "Entramos na sua operação e mapeamos cada processo com inteligência artificial. Identificamos o exato gargalo que está drenando mais tempo, dinheiro e energia do seu time.",
-            "Entramos na sua operação comercial e mapeamos onde o processo está quebrando. Você sai com clareza sobre o gargalo que mais custa dinheiro, antes de qualquer implementação.");
-          replaceLeaf(howItWorks, "Mapeamento de Prioridades", "Priorização");
-          replaceLeaf(howItWorks,
-            "Organizamos os processos por nível de criticidade. Você descobre, com dados, qual problema resolver primeiro para ter o maior impacto no faturamento.",
-            "Organizamos o que resolver primeiro com base no impacto direto no faturamento. Sem achismo, sem implementar coisa que não move o ponteiro.");
-          replaceLeaf(howItWorks, "Implementação de Agentes de IA", "Implementação com IA");
-          replaceLeaf(howItWorks,
-            "Criamos e implementamos agentes de IA sob medida para cada processo crítico. Começando pelo gargalo #1 e expandindo conforme os resultados aparecem.",
-            "Montamos e operamos a solução sob medida pra cada gargalo identificado. Começando pelo mais crítico e expandindo conforme o resultado aparece.");
-          Array.from(howItWorks.querySelectorAll("*")).forEach(function (element) {
-            if (element.children.length === 0 && /^PILAR 0[1-3]$/.test(element.textContent.trim())) {
-              element.remove();
-            }
-            if (element.children.length === 0 && element.textContent.trim().startsWith("Isso não é teoria.")) {
-              element.remove();
-            }
-          });
-        }
-
-        const market = findSection(/MERCADO VS CLICKA/);
-        if (market) {
-          replaceLeaf(market, "MERCADO VS CLICKA", "MERCADO VS RUPTO");
-          const heading = market.querySelector("h2");
-          if (heading) heading.textContent = "O mercado vende ferramenta. A Rupto implementa inteligência.";
-          replaceLeaf(market, "O QUE O MERCADO FAZ", "O que o mercado faz:");
-          replaceLeaf(market, "O QUE A CLICKA FAZ", "O que a Rupto faz:");
-          const lists = market.querySelectorAll("ul");
-          if (lists[0]) {
-            lists[0].innerHTML = '<li>Vende solução genérica sem entender sua operação. IA de prateleira pra qualquer empresa. Você decide o que automatizar no escuro. Entrega e some.</li>';
-          }
-          if (lists[1]) {
-            lists[1].innerHTML = '<li>Mapeia sua operação antes de propor qualquer coisa. IA sob medida pro seu gargalo específico. A gente mostra com dados o que priorizar. Fica responsável por continuar funcionando.</li>';
-          }
-        }
-
-        const audience = findSection(/Toda empresa que fatura tem gargalos/);
-        if (audience && audience.dataset.copyVersion !== "commercial-v1") {
-          audience.dataset.copyVersion = "commercial-v1";
-          audience.innerHTML = [
-            '<div style="max-width:860px;margin:0 auto;text-align:center">',
-            '<p style="margin:0 0 18px;color:#555;font:500 11px/1 Inter,sans-serif;letter-spacing:.16em">PARA QUEM É</p>',
-            '<h2 style="margin:0 auto 24px;color:#ededed;font:700 clamp(30px,5vw,52px)/1.08 Space Grotesk,sans-serif;letter-spacing:-.04em">Se sua empresa tem processos que consomem tempo de funcionários, tempo do dono e travam o crescimento, esse diagnóstico é pra você.</h2>',
-            '<p style="max-width:720px;margin:0 auto 32px;color:#888;font:400 16px/1.7 Inter,sans-serif">Empresas que já vendem e querem vender mais com o mesmo time. Operações que dependem de atendimento, follow-up, qualificação ou agendamento. Donos que estão na operação quando deveriam estar no estratégico.</p>',
-            '<button class="new-primary-cta" type="button" data-scroll-lp>Agendar Diagnóstico</button>',
-            '<p class="new-hero-support">Reunião de 30 min · Você sai com clareza sobre seu gargalo número 1</p>',
-            '</div>'
-          ].join("");
-        }
-
-        const panel = findSection(/Cada métrica, cada lead/);
-        if (panel) {
-          const heading = panel.querySelector("h2");
-          if (heading) heading.textContent = "Cada métrica, cada lead. Tudo num só painel.";
-          replaceLeaf(panel,
-            "Visibilidade total sobre a operação do seu agente, em tempo real.",
-            "Visibilidade total sobre sua operação comercial em tempo real. Leads recebidos, qualificados, tempo de resposta, taxa de conversão, follow-ups pendentes. Você para de gerenciar no achismo e começa a decidir com dado.");
-        }
-
-        const faq = document.getElementById("faq");
-        if (faq) {
-          const replacements = [
-            ["Entramos na sua empresa, mapeamos todos os processos com IA, identificamos qual gargalo está te custando mais dinheiro, e implementamos agentes de inteligência artificial sob medida para resolver, começando pelo mais crítico.",
-             "Entramos na sua operação comercial, identificamos onde você está perdendo venda e usamos IA pra resolver. Começando pelo gargalo que mais impacta seu faturamento."],
-            ["Quanto tempo leva para ver resultado?", "Quanto tempo leva pra ver resultado?"],
-            ["A fase de diagnóstico dura entre 5 a 7 dias úteis. A implementação do primeiro agente de IA acontece nos 10 a 15 dias seguintes. Nossos clientes relatam impacto mensurável em até 30 dias.",
-             "O diagnóstico leva de 5 a 7 dias úteis. A implementação do primeiro sistema acontece nos 10 a 15 dias seguintes. O impacto começa a aparecer nas primeiras semanas de operação."],
-            ["Funciona para o meu tipo de empresa?", "Funciona pro meu tipo de empresa?"],
-            ["Se a sua empresa tem processos que consomem tempo de pessoas, atendimento, follow-up, qualificação, agendamento, gestão, funciona. Já implementamos em clínicas, construtoras, escritórios, e-commerces e dezenas de outros segmentos.",
-             "Se sua empresa tem processos de atendimento, qualificação, follow-up ou agendamento que dependem de pessoas pra funcionar, funciona. O diagnóstico vai mostrar exatamente onde a IA faz diferença pra você."],
-            ["Qual a diferença de vocês para um chatbot ou ferramenta de IA?", "Qual a diferença de vocês pra um chatbot ou ferramenta de IA?"],
-            ["A maioria das ferramentas de IA é genérica, não conhece sua operação, seus dados, suas dores. Nós fazemos um diagnóstico completo antes de implementar qualquer coisa. É a diferença entre tomar um remédio aleatório e ir ao médico primeiro.",
-             "A maioria das ferramentas é genérica e não conhece sua operação. A gente faz o diagnóstico antes de implementar qualquer coisa. É a diferença entre tomar um remédio aleatório e ir ao médico primeiro."],
-            ["Meu problema é muito específico. Vocês conseguem resolver?", "Meu problema é muito específico. Vocês conseguem resolver?"],
-            ["Essa é justamente a razão pela qual fazemos o diagnóstico antes. Não vendemos solução pronta, mapeamos o SEU problema e construímos a solução sob medida para ele.",
-             "Essa é justamente a razão do diagnóstico. Não vendemos solução pronta. Mapeamos seu problema e construímos sob medida pra ele."],
-            ["Qual o investimento?", "Quanto custa?"],
-            ["Depende da complexidade da sua operação. O diagnóstico inicial é gratuito e nele você já recebe clareza sobre o gargalo principal. A partir daí, montamos uma proposta sob medida. Agende uma conversa para entender melhor.",
-             "O diagnóstico é gratuito. A partir do que ele revelar, montamos uma proposta sob medida pra sua operação. Agende uma conversa pra entender melhor."]
-          ];
-          replacements.forEach(function (pair) { replaceLeaf(faq, pair[0], pair[1]); });
-          Array.from(faq.querySelectorAll("*")).forEach(function (element) {
-            if (element.children.length === 0 && element.textContent.trim() === "Perguntas que empresários fazem antes de agendar.") {
-              element.remove();
-            }
-          });
-        }
-
-        const booking = document.getElementById("lp-form");
-        if (booking) {
-          replaceLeaf(booking,
-            "Cada dia que esse gargalo continua ativo, ele drena dinheiro, tempo e energia do seu time. Você não precisa de mais ferramentas, precisa de clareza sobre onde atacar primeiro.",
-            "Cada dia que esse gargalo continua ativo, ele drena dinheiro, tempo e energia do seu time. Você não precisa de mais ferramenta, precisa de clareza sobre onde atacar primeiro.");
-          replaceLeaf(booking, "Julio Oliveira · Fundador", "Júlio Oliveira · Fundador Rupto AI");
-          replaceLeaf(booking,
-            "Reunião de 30 min · Você sai com clareza sobre o seu gargalo #1",
-            "Reunião de 30 min · Você sai com clareza sobre seu gargalo número 1");
-          const instagram = booking.querySelector('a[href="https://www.instagram.com/clicka.ia"]');
-          if (instagram) instagram.remove();
-        }
-
-        const footer = document.querySelector("footer");
-        if (footer) {
-          replaceLeaf(footer,
-            "Diagnóstico operacional e implementação de IA sob medida para empresas.",
-            "IA aplicada a vendas e crescimento.");
-          replaceLeaf(footer,
-            "© 2026 Rupto AI, Brasília, DF · Todos os direitos reservados",
-            "© 2026 Rupto AI · Todos os direitos reservados");
-          Array.from(footer.querySelectorAll("*")).forEach(function (element) {
-            if (element.children.length === 0 && element.textContent.trim() === "Termos de Uso · Política de Privacidade") {
-              element.remove();
-            }
-          });
-          const footerLinkedIn = Array.from(footer.querySelectorAll("a")).find(function (link) {
-            return link.textContent.trim() === "LinkedIn";
-          });
-          if (footerLinkedIn) footerLinkedIn.href = "https://www.linkedin.com/company/ruptoai/";
-        }
-
-        const soloCard = document.querySelector(".solo-business-card");
-        if (soloCard) {
-          const eyebrow = soloCard.querySelector(".solo-eyebrow");
-          const heading = soloCard.querySelector("h2");
-          const paragraph = soloCard.querySelector("p:last-child");
-          if (eyebrow) eyebrow.textContent = "POR QUE A RUPTO";
-          if (heading) heading.innerHTML = "Uma empresa enxuta.<br><span>Uma pessoa responsável.</span>";
-          if (paragraph) paragraph.textContent = "A Rupto AI é construída e operada por Júlio Oliveira. Do diagnóstico à implementação, você fala diretamente com quem projeta e executa cada solução. Sem intermediário, sem suporte genérico, sem você precisar explicar o problema duas vezes.";
-          if (!soloCard.querySelector(".solo-founder-signature")) {
-            const signature = document.createElement("p");
-            signature.className = "solo-founder-signature";
-            signature.style.cssText = "margin:0 0 18px;color:#ededed;font:600 14px/1.5 Inter,sans-serif";
-            signature.innerHTML = "Júlio Oliveira<br><span style='color:#666;font-weight:400'>Fundador · Rupto AI</span>";
-            paragraph.before(signature);
-          }
-        }
-
-        document.querySelectorAll("[data-scroll-lp]").forEach(function (button) {
-          if (button.dataset.bound === "true") return;
-          button.dataset.bound = "true";
-          button.addEventListener("click", function () {
-            const target = document.getElementById("lp-form");
-            if (target) target.scrollIntoView({ behavior: "smooth" });
-          });
-        });
-      }
-
-      function updateSoloBusinessIdentity() {
-        const solutionSection = document.getElementById("lp-solution");
-        const oldProfile = solutionSection && Array.from(solutionSection.querySelectorAll("header"))
-          .find(function (header) { return /fidel|noleto/i.test(header.textContent); });
-
-        if (oldProfile) {
-          oldProfile.innerHTML = [
-            '<div class="solo-founder-profile">',
-            '<picture><source srcset="/assets/julio-oliveira.webp" type="image/webp"><img class="solo-founder-mark" src="/assets/julio-oliveira.png" alt="Júlio Oliveira" width="44" height="44" loading="lazy" decoding="async"></picture>',
-            '<div>',
-            '<div class="solo-founder-name">Júlio Oliveira</div>',
-            '<div class="solo-founder-role">Fundador · Rupto AI</div>',
-            '</div>',
-            '</div>'
-          ].join("");
-        }
-
-        const creatorsSection = Array.from(document.querySelectorAll("section")).find(function (section) {
-          return /OS CRIADORES POR TRÁS DA CLICKA/i.test(section.textContent);
-        });
-
-        if (creatorsSection) {
-          creatorsSection.innerHTML = [
-            '<div class="solo-business-card">',
-            '<p class="solo-eyebrow">POR QUE A RUPTO</p>',
-            '<h2>Uma empresa enxuta.<br><span>Uma pessoa responsável.</span></h2>',
-            '<p>A Rupto AI é construída e operada por Júlio Oliveira. Do diagnóstico à implementação, você fala diretamente com quem projeta e executa cada solução. Sem intermediário, sem suporte genérico, sem você precisar explicar o problema duas vezes.</p>',
-            '</div>'
-          ].join("");
-        }
-
-        const bookingSection = document.getElementById("lp-form");
-        const oldOwners = bookingSection && Array.from(bookingSection.querySelectorAll("div"))
-          .find(function (element) {
-            return element.classList.contains("mb-3") && /fidel|noleto/i.test(element.textContent);
-          });
-
-        if (oldOwners) {
-          oldOwners.className = "solo-calendar-owner";
-          oldOwners.innerHTML = [
-            '<picture><source srcset="/assets/julio-oliveira.webp" type="image/webp"><img src="/assets/julio-oliveira.png" alt="Júlio Oliveira" width="32" height="32" loading="lazy" decoding="async"></picture>',
-            '<span>Júlio Oliveira · Fundador Rupto AI</span>'
-          ].join("");
-        }
-      }
-
-      function updateNavbarCta(root = document) {
-        const buttons = [];
-        if (root.matches && root.matches("button")) {
-          buttons.push(root);
-        }
-        if (root.querySelectorAll) {
-          buttons.push(...root.querySelectorAll("button"));
-        }
-
-        buttons.forEach(function (button) {
-          const label = button.textContent.trim();
-          if (label === "Dashboard") {
-            button.remove();
-            return;
-          }
-          if (label === "Diagnóstico" || label === "Diagnóstico →") {
-            button.textContent = "Diagnóstico Gratuito →";
-          }
-        });
-      }
-
-      function updateNavbarSocial(root = document) {
-        const links = [];
-        if (root.matches && root.matches('a[href="https://www.instagram.com/clicka.ia"]')) {
-          links.push(root);
-        }
-        if (root.querySelectorAll) {
-          links.push(...root.querySelectorAll('a[href="https://www.instagram.com/clicka.ia"]'));
-        }
-
-        links.forEach(function (link) {
-          const isDesktopNavbar = link.classList.contains("w-8") && link.classList.contains("h-8");
-          const isMobileNavbar = link.classList.contains("mt-4") && link.classList.contains("gap-2");
-          if (!isDesktopNavbar && !isMobileNavbar) return;
-
-          link.href = "https://www.linkedin.com/company/ruptoai/";
-          link.setAttribute("aria-label", "LinkedIn da Rupto AI");
-          link.innerHTML = [
-            '<svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">',
-            '<path d="M5.34 3.1A2.16 2.16 0 1 1 5.34 7.42 2.16 2.16 0 0 1 5.34 3.1ZM3.47 8.86h3.74V20.9H3.47V8.86ZM9.55 8.86h3.58v1.65h.05c.5-.95 1.72-1.95 3.54-1.95 3.78 0 4.48 2.49 4.48 5.73v6.61h-3.73v-5.86c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1v5.96H9.55V8.86Z"></path>',
-            '</svg>',
-            isMobileNavbar ? '<span>LinkedIn</span>' : ''
-          ].join("");
-        });
-      }
-
-      const navbarObserver = new MutationObserver(function (mutations) {
-        mutations.forEach(function (mutation) {
-          mutation.addedNodes.forEach(function (node) {
-            if (node.nodeType === Node.ELEMENT_NODE) {
-              updateNavbarCta(node);
-              updateNavbarSocial(node);
-            }
-          });
-        });
-      });
-
-      window.addEventListener("load", function() {
-        updateSoloBusinessIdentity();
-        applyNewSiteCopy();
-        updateNavbarCta();
-        updateNavbarSocial();
-        document.addEventListener("click", function () {
-          setTimeout(function () {
-            updateNavbarCta();
-            updateNavbarSocial();
-          }, 0);
-        });
-      });
-    </script>
+    
+    
     <link rel="stylesheet" crossorigin="" href="css/index-CQdIASk2.css">
     <link rel="stylesheet" href="css/rupto-copy.css">
-  <script defer="" src="js/~flock.js" data-proxy-url="/~api/analytics"></script><script defer="" src="js/events.js" data-artifact-kind="cf_deployment_id" data-artifact-id="6f944749-6cd0-4342-8a4e-2da6a92d8733" data-commit-sha="2028f1e1875e851d2317e3a3a22c4978bc9e0c02" data-context-token="v1.eyJwcm9qZWN0X2lkIjoiNzhjNWU5ZTUtZmY5NS00NTUwLWI0MjAtMjZkNmEyMDVmOTg4IiwiYXJ0aWZhY3Rfa2luZCI6ImNmX2RlcGxveW1lbnRfaWQiLCJhcnRpZmFjdF9pZCI6IjZmOTQ0NzQ5LTZjZDAtNDM0Mi04YTRlLTJkYTZhOTJkODczMyIsImNvbW1pdF9zaGEiOiIyMDI4ZjFlMTg3NWU4NTFkMjMxN2UzYTNhMjJjNDk3OGJjOWUwYzAyIiwiZXhwIjoxNzgyNzM2NjQzfQ.b9Zxe40txemEU4i7Sl3oULVv3CtLeROkW_J6klkXNG0"></script></head>
+  <script defer="" src="js/~flock.js" data-proxy-url="/~api/analytics"></script><script defer="" src="js/events.js" data-artifact-kind="cf_deployment_id" data-artifact-id="6f944749-6cd0-4342-8a4e-2da6a92d8733" data-commit-sha="2028f1e1875e851d2317e3a3a22c4978bc9e0c02" data-context-token="v1.eyJwcm9qZWN0X2lkIjoiNzhjNWU5ZTUtZmY5NS00NTUwLWI0MjAtMjZkNmEyMDVmOTg4IiwiYXJ0aWZhY3Rfa2luZCI6ImNmX2RlcGxveW1lbnRfaWQiLCJhcnRpZmFjdF9pZCI6IjZmOTQ0NzQ5LTZjZDAtNDM0Mi04YTRlLTJkYTZhOTJkODczMyIsImNvbW1pdF9zaGEiOiIyMDI4ZjFlMTg3NWU4NTFkMjMxN2UzYTNhMjJjNDk3OGJjOWUwYzAyIiwiZXhwIjoxNzgyNzM2NjQzfQ.b9Zxe40txemEU4i7Sl3oULVv3CtLeROkW_J6klkXNG0"></script><style>.cal-embed{border:0px;min-height:300px;margin:0 auto;width:100%;display:block!important;color-scheme:unset!important}</style></head>
 
   <body>
-    <div id="root"></div>
+    <script>!function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if(e){c.add(e|| '')}else{c.add('dark');}if(e==='light'||e==='dark'||!e)d.style.colorScheme=e||'dark'}catch(t){}}();</script><div class="relative min-h-screen overflow-x-hidden" style="background: rgb(5, 5, 5); font-family: Inter, sans-serif;"><div class="fixed inset-0 pointer-events-none z-0" style="background: radial-gradient(80% 50% at 50% -10%, rgba(47, 128, 237, 0.12) 0%, transparent 60%), radial-gradient(60% 40% at 70% 5%, rgba(47, 128, 237, 0.08) 0%, transparent 50%), radial-gradient(50% 35% at 30% 0%, rgba(197, 111, 255, 0.06) 0%, transparent 45%);"></div><nav class="fixed top-6 left-0 right-0 z-40 px-4 md:px-[8vw]" style="opacity: 1; transform: none;"><div class="flex items-center justify-between px-5 py-2.5 mx-auto max-w-5xl rounded-xl" style="background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.07);"><div class="flex items-center gap-2 cursor-pointer"><img src="/assets/rupto-logo.svg" alt="Rupto AI" class="h-9 w-auto object-contain"><p style="font-family: Inter, sans-serif; font-size: 13px; font-weight: 400; color: rgb(255, 255, 255); letter-spacing: 0.22em; text-transform: uppercase;">Rupto AI</p></div><div class="hidden md:flex items-center gap-2.5"><a href="https://www.linkedin.com/company/ruptoai/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-8 h-8 rounded-full" aria-label="LinkedIn da Rupto AI" style="opacity: 0.35; transition: opacity 0.3s;"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.34 3.1A2.16 2.16 0 1 1 5.34 7.42 2.16 2.16 0 0 1 5.34 3.1ZM3.47 8.86h3.74V20.9H3.47V8.86ZM9.55 8.86h3.58v1.65h.05c.5-.95 1.72-1.95 3.54-1.95 3.78 0 4.48 2.49 4.48 5.73v6.61h-3.73v-5.86c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1v5.96H9.55V8.86Z"></path></svg></a><button class="cursor-pointer border-none" tabindex="0" style="padding: 7px 18px; border-radius: 9999px; background: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: Inter, sans-serif; font-weight: 500; font-size: 13px;" data-scroll-lp="">Diagnóstico Gratuito</button></div><button class="md:hidden flex items-center justify-center w-9 h-9 bg-transparent border-none cursor-pointer" data-mobile-menu-open=""><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button></div></nav><div class="relative z-10"><section class="min-h-screen flex flex-col items-center px-6 pt-40 pb-0 relative overflow-hidden md:px-0 md:pt-[170px] rupto-hero-section" data-rupto-copy="hero"><video class="rupto-hero-video" autoplay="" loop="" playsinline="" preload="none" poster="/assets/video-poster.jpg" fetchpriority="high"><source src="/assets/video-header.mp4" type="video/mp4"></video><div class="rupto-hero-overlay"></div><div class="rupto-hero">
+      <p class="rupto-eyebrow">DIAGNÓSTICO COMERCIAL · IA APLICADA A VENDAS E CRESCIMENTO</p>
+      <h1>Sua empresa vende, mas <span class="rupto-accent">perde venda</span> todo dia por falta de estrutura.</h1>
+      <p class="rupto-lead">Identificamos onde sua operação comercial está perdendo venda e usamos IA pra resolver, começando pelo gargalo que mais custa dinheiro.</p>
+      <button class="rupto-cta" type="button" data-rupto-scroll="" data-bound="true" data-scroll-lp="">Agendar Diagnóstico <span aria-hidden="true">↗</span></button>
+      <p class="rupto-support">Reunião de 30 min · Você sai sabendo exatamente onde está perdendo venda</p>
+    </div></section><section class="px-6 md:px-[8vw] py-28 relative" data-rupto-section="problem"><p class="mb-5" style="font-family: Inter, sans-serif; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; color: rgb(85, 85, 85); opacity: 1; transform: none;">o problema</p><h2 class="mb-5" style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: clamp(28px, 4vw, 44px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; max-width: 760px; color: rgb(237, 237, 237); opacity: 1; transform: none;">A maioria das empresas implementa IA <span class="rupto-accent">do jeito errado.</span></h2><div class="mb-16" style="font-family: Inter, sans-serif; font-size: 15px; color: rgb(136, 136, 136); line-height: 1.7; max-width: 620px; opacity: 1; transform: none;"><p class="mb-4">Compra um chatbot. Assina uma ferramenta nova. Automatiza um processo aleatório. E não muda nada.</p><p class="mb-4" style="color: rgb(102, 102, 102);">Sabe por quê?</p><p>Porque implementar IA sem saber onde está o problema de verdade é o mesmo que comprar um remédio sem saber qual é a doença.</p></div><div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16 max-w-5xl"><div class="group relative p-7 liquid-glass-card cursor-default" style="opacity: 1; transform: none;"><div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style="background: radial-gradient(300px, rgba(47, 128, 237, 0.12), transparent 60%);"></div><div class="relative z-10"><div class="w-10 h-10 rounded-xl flex items-center justify-center mb-5" style="border: 1px solid rgba(47, 128, 237, 0.15); background: rgba(47, 128, 237, 0.06);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a65c9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flame"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg></div><h4 class="mb-3" style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: 17px; font-weight: 600; letter-spacing: -0.01em; color: rgb(237, 237, 237);">Refém da operação</h4><p style="font-family: Inter, sans-serif; font-size: 14px; color: rgb(136, 136, 136); line-height: 1.65;">Você passa o dia apagando incêndio sem tempo pra pensar no que realmente importa.</p></div></div><div class="group relative p-7 liquid-glass-card cursor-default" style="opacity: 1; transform: none;"><div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style="background: radial-gradient(300px, rgba(47, 128, 237, 0.12), transparent 60%);"></div><div class="relative z-10"><div class="w-10 h-10 rounded-xl flex items-center justify-center mb-5" style="border: 1px solid rgba(47, 128, 237, 0.15); background: rgba(47, 128, 237, 0.06);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a65c9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div><h4 class="mb-3" style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: 17px; font-weight: 600; letter-spacing: -0.01em; color: rgb(237, 237, 237);">Time no limite</h4><p style="font-family: Inter, sans-serif; font-size: 14px; color: rgb(136, 136, 136); line-height: 1.65;">Contratar mais gente não resolve, só aumenta custo fixo. O problema está no processo, não no headcount.</p></div></div><div class="group relative p-7 liquid-glass-card cursor-default" style="opacity: 1; transform: none;"><div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style="background: radial-gradient(300px, rgba(47, 128, 237, 0.12), transparent 60%);"></div><div class="relative z-10"><div class="w-10 h-10 rounded-xl flex items-center justify-center mb-5" style="border: 1px solid rgba(47, 128, 237, 0.15); background: rgba(47, 128, 237, 0.06);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a65c9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wrench"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg></div><h4 class="mb-3" style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: 17px; font-weight: 600; letter-spacing: -0.01em; color: rgb(237, 237, 237);">IA sem resultado</h4><p style="font-family: Inter, sans-serif; font-size: 14px; color: rgb(136, 136, 136); line-height: 1.65;">Você já tentou chatbot, automação, ferramenta nova. Nada gerou resultado real porque ninguém mapeou o problema certo antes de implementar.</p></div></div><div class="group relative p-7 liquid-glass-card cursor-default" style="opacity: 1; transform: none;"><div class="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style="background: radial-gradient(300px, rgba(47, 128, 237, 0.12), transparent 60%);"></div><div class="relative z-10"><div class="w-10 h-10 rounded-xl flex items-center justify-center mb-5" style="border: 1px solid rgba(47, 128, 237, 0.15); background: rgba(47, 128, 237, 0.06);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a65c9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg></div><h4 class="mb-3" style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: 17px; font-weight: 600; letter-spacing: -0.01em; color: rgb(237, 237, 237);">Mais lead não é a resposta</h4><p style="font-family: Inter, sans-serif; font-size: 14px; color: rgb(136, 136, 136); line-height: 1.65;">Você acha que precisa de mais lead e mais tráfego. Mas o problema pode estar no atendimento, no follow-up, ou no funil que vaza silenciosamente toda semana.</p></div></div></div><div class="text-center max-w-2xl mx-auto" style="opacity: 1; transform: none;"><p style="font-family: Inter, sans-serif; font-size: clamp(15px, 1.8vw, 18px); font-weight: 400; color: rgb(170, 170, 170); line-height: 1.6;">A verdade é: <span style="color: rgb(237, 237, 237); font-weight: 600;">o gargalo que mais custa dinheiro quase nunca é o que você imagina.</span></p></div></section><section class="px-6 md:px-[8vw] py-28 relative"><div class="max-w-3xl mx-auto mb-16 md:mb-20 text-center"><p class="mb-5" style="font-family: Inter, sans-serif; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; color: rgb(85, 85, 85); opacity: 1; transform: none;">como funciona</p><h2 class="mb-5" style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; color: rgb(237, 237, 237); opacity: 1; transform: none;">Antes de implementar qualquer IA, a gente descobre onde sua empresa está <span class="rupto-accent">perdendo venda.</span></h2><p class="mx-auto" style="font-family: Inter, sans-serif; font-size: 15px; color: rgb(136, 136, 136); line-height: 1.7; max-width: 560px; opacity: 1; transform: none;">Diagnóstico primeiro. Implementação depois. Assim cada real investido vai direto pra onde gera resultado.</p></div><div class="max-w-3xl mx-auto"><div class="relative"><div class="absolute left-7 md:left-8 top-0 bottom-0 w-px z-0" style="background: rgba(255, 255, 255, 0.04);"><div class="w-full origin-top" style="background: linear-gradient(rgba(47, 128, 237, 0.7) 0%, rgba(47, 128, 237, 0.3) 100%); box-shadow: rgba(47, 128, 237, 0.3) 0px 0px 12px; height: 0%;"></div></div><div class="flex flex-col"><div class="relative flex gap-6 md:gap-10" style="opacity: 1;"><div class="flex flex-col items-center flex-shrink-0 z-10"><div class="w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center relative" style="border: 1px solid rgba(47, 128, 237, 0.5); backdrop-filter: blur(20px); transform: scale(1.0768); background: rgba(47, 128, 237, 0.15);"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search" style="color: rgb(47, 128, 237); transition: color 0.5s;"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg><div class="absolute inset-0 rounded-2xl" style="border: 1px solid rgba(47, 128, 237, 0.4); transform: scale(1.12278);"></div></div></div><div class="pb-20 md:pb-28 pt-1" style="transform: none; opacity: 1;"><div class="inline-flex items-center gap-1.5 mb-4 px-3 py-1 rounded-full" style="border: 1px solid rgba(47, 128, 237, 0.25); background: rgba(47, 128, 237, 0.12);"><span style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgb(47, 128, 237); transition: color 0.5s;">Pilar 01</span></div><h4 class="mb-2" style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: clamp(18px, 2vw, 22px); font-weight: 600; letter-spacing: -0.02em; color: rgb(237, 237, 237); transition: color 0.5s;">AI Audit</h4><p style="font-family: Inter, sans-serif; font-size: 14px; color: rgb(153, 153, 153); line-height: 1.7; max-width: 460px; transition: color 0.5s;">Entramos na sua operação comercial e mapeamos onde o processo está quebrando. Você sai com clareza sobre o gargalo que mais custa dinheiro, antes de qualquer implementação.</p></div></div><div class="relative flex gap-6 md:gap-10" style="opacity: 1;"><div class="flex flex-col items-center flex-shrink-0 z-10"><div class="w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center relative" style="border: 1px solid rgba(250, 251, 254, 0.08); backdrop-filter: blur(20px); transform: none; background: rgba(22, 27, 56, 0.39);"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-checks" style="color: rgb(68, 68, 68); transition: color 0.5s;"><path d="m3 17 2 2 4-4"></path><path d="m3 7 2 2 4-4"></path><path d="M13 6h8"></path><path d="M13 12h8"></path><path d="M13 18h8"></path></svg></div></div><div class="pb-20 md:pb-28 pt-1" style="transform: none; opacity: 1;"><div class="inline-flex items-center gap-1.5 mb-4 px-3 py-1 rounded-full" style="border: 1px solid rgba(220, 228, 250, 0.1); background: rgba(220, 228, 250, 0.055);"><span style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgb(85, 85, 85); transition: color 0.5s;">Pilar 02</span></div><h4 class="mb-2" style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: clamp(18px, 2vw, 22px); font-weight: 600; letter-spacing: -0.02em; color: rgb(85, 85, 85); transition: color 0.5s;">Priorização</h4><p style="font-family: Inter, sans-serif; font-size: 14px; color: rgb(68, 68, 68); line-height: 1.7; max-width: 460px; transition: color 0.5s;">Organizamos o que resolver primeiro com base no impacto direto no faturamento. Sem achismo, sem implementar coisa que não move o ponteiro.</p></div></div><div class="relative flex gap-6 md:gap-10" style="opacity: 1;"><div class="flex flex-col items-center flex-shrink-0 z-10"><div class="w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center relative" style="border: 1px solid rgba(250, 251, 254, 0.08); backdrop-filter: blur(20px); transform: scale(1.0032); background: rgba(22, 27, 56, 0.39);"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot" style="color: rgb(68, 68, 68); transition: color 0.5s;"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg></div></div><div class="pb-20 md:pb-28 pt-1" style="transform: none; opacity: 1;"><div class="inline-flex items-center gap-1.5 mb-4 px-3 py-1 rounded-full" style="border: 1px solid rgba(220, 228, 250, 0.1); background: rgba(220, 228, 250, 0.055);"><span style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgb(85, 85, 85); transition: color 0.5s;">Pilar 03</span></div><h4 class="mb-2" style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: clamp(18px, 2vw, 22px); font-weight: 600; letter-spacing: -0.02em; color: rgb(85, 85, 85); transition: color 0.5s;">Implementação com IA</h4><p style="font-family: Inter, sans-serif; font-size: 14px; color: rgb(68, 68, 68); line-height: 1.7; max-width: 460px; transition: color 0.5s;">Montamos e operamos a solução sob medida pra cada gargalo identificado. Começando pelo mais crítico e expandindo conforme o resultado aparece.</p></div></div></div></div><div class="flex justify-center mt-4" style="transform: none; opacity: 1;"></div></div></section><section class="px-6 md:px-[8vw] py-28 relative"><p class="mb-5 text-center" style="font-family: Inter, sans-serif; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; color: rgb(85, 85, 85); opacity: 1; transform: none;">MERCADO VS RUPTO</p><h2 class="mb-16 text-center mx-auto" style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: clamp(28px, 3.8vw, 44px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; max-width: 780px; color: rgb(237, 237, 237); opacity: 1; transform: none;">O mercado vende ferramenta. <span class="rupto-accent">A Rupto implementa inteligência.</span></h2><div class="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto"><div class="p-7 rounded-2xl" style="border: 1px solid rgba(255, 255, 255, 0.05); background: rgba(20, 20, 20, 0.3); backdrop-filter: blur(12px); opacity: 1; transform: none;"><div class="flex items-center gap-2 mb-6"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><p style="font-family: Inter, sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; color: rgb(102, 102, 102);">O que o mercado faz:</p></div><ul class="flex flex-col gap-4"><li>Vende solução genérica sem entender sua operação. IA de prateleira pra qualquer empresa. Você decide o que automatizar no escuro. Entrega e some.</li></ul></div><div class="p-7 rounded-2xl relative overflow-hidden rupto-market-card" style="border: 1px solid rgba(47, 128, 237, 0.35); background: rgba(30, 10, 50, 0.5); backdrop-filter: blur(16px); box-shadow: rgba(47, 128, 237, 0.12) 0px 8px 40px; opacity: 1; transform: none;"><div class="absolute pointer-events-none" style="top: -30%; right: -20%; width: 60%; height: 80%; background: radial-gradient(circle, rgba(47, 128, 237, 0.15), transparent 70%);"></div><div class="flex items-center gap-2 mb-6 relative z-10"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2f80ed" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg><p style="font-family: Inter, sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; color: rgb(47, 128, 237);">O que a Rupto faz:</p></div><ul class="flex flex-col gap-4 relative z-10"><li>Mapeia sua operação antes de propor qualquer coisa. IA sob medida pro seu gargalo específico. Mostra com dados o que priorizar. Fica responsável por continuar funcionando.</li></ul></div></div><p class="text-center mt-14 max-w-xl mx-auto" style="font-family: Inter, sans-serif; font-size: clamp(15px, 1.6vw, 17px); color: rgb(170, 170, 170); line-height: 1.6; font-style: italic; opacity: 1; transform: none;">É como ir ao médico antes de comprar o remédio. <span style="color: rgb(237, 237, 237); font-weight: 600; font-style: normal;">O diagnóstico muda tudo.</span></p></section><section class="px-6 md:px-[8vw] py-28 relative" data-rupto-copy="audience">
+      <div class="rupto-audience">
+        <p class="rupto-eyebrow">PARA QUEM É</p>
+        <h2>Se sua empresa tem processos que consomem tempo de funcionários, tempo do dono e travam o crescimento, esse diagnóstico é pra você.</h2>
+        <p class="rupto-audience-copy">Empresas que já vendem e querem vender mais com o mesmo time. Operações que dependem de atendimento, follow-up, qualificação ou agendamento. Donos que estão na operação quando deveriam estar no estratégico.</p>
+        <button class="rupto-cta" type="button" data-rupto-scroll="" data-bound="true" data-scroll-lp="">Agendar Diagnóstico <span aria-hidden="true">↗</span></button>
+        <p class="rupto-support">Reunião de 30 min · Você sai com clareza sobre seu gargalo número 1</p>
+      </div>
+    </section><section class="px-6 md:px-[8vw] py-28 relative" data-rupto-section="control"><p style="font-family: Inter, sans-serif; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.18em; color: rgb(170, 170, 170); margin-bottom: 20px; opacity: 1; transform: none;">seu controle total</p><h2 style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; max-width: 550px; color: rgb(237, 237, 237); margin-bottom: 6px; opacity: 1; transform: none;">Cada métrica, cada lead. Tudo num só painel.</h2><p style="font-family: Inter, sans-serif; font-size: 15px; color: rgb(136, 136, 136); line-height: 1.7; max-width: 480px; margin-bottom: 48px; opacity: 1; transform: none;">Assim fica a visibilidade da sua operação comercial depois que a Rupto estrutura seu processo. Cada lead que entra, cada conversa ativa, cada follow-up pendente, em tempo real, sem você precisar abrir planilha ou perguntar pro vendedor o que está acontecendo.</p><div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8"><div class="col-span-1 md:col-span-2 p-5 rounded-xl group cursor-default rupto-control-card" style="border: 1px solid rgba(47, 128, 237, 0.2); backdrop-filter: blur(16px); background: rgba(20, 10, 30, 0.4); transition: border-color 0.4s, box-shadow 0.4s, transform 0.4s; opacity: 1; transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chart-column mb-3"><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg><p style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: clamp(22px, 2vw, 32px); font-weight: 700; color: rgb(237, 237, 237); letter-spacing: -0.02em; line-height: 1; margin-bottom: 6px;">1.2k</p><p style="font-family: Inter, sans-serif; font-size: 13px; font-weight: 500; color: rgb(136, 136, 136); line-height: 1.3;">Leads Recebidos vs Qualificados</p><p style="font-family: Inter, sans-serif; font-size: 11px; font-weight: 400; color: rgb(85, 85, 85); margin-top: 2px;">este mês</p></div><div class="col-span-1 p-5 rounded-xl group cursor-default rupto-control-card" style="border: 1px solid rgba(47, 128, 237, 0.2); backdrop-filter: blur(16px); background: rgba(20, 10, 30, 0.4); transition: border-color 0.4s, box-shadow 0.4s, transform 0.4s; opacity: 1; transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock mb-3"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><p style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: clamp(22px, 2vw, 32px); font-weight: 700; color: rgb(237, 237, 237); letter-spacing: -0.02em; line-height: 1; margin-bottom: 6px;">&lt; 3s</p><p style="font-family: Inter, sans-serif; font-size: 13px; font-weight: 500; color: rgb(136, 136, 136); line-height: 1.3;">Tempo Médio de Resposta</p><p style="font-family: Inter, sans-serif; font-size: 11px; font-weight: 400; color: rgb(85, 85, 85); margin-top: 2px;">últimas 24h</p></div><div class="col-span-1 p-5 rounded-xl group cursor-default rupto-control-card" style="border: 1px solid rgba(47, 128, 237, 0.2); backdrop-filter: blur(16px); background: rgba(20, 10, 30, 0.4); transition: border-color 0.4s, box-shadow 0.4s, transform 0.4s; opacity: 1; transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target mb-3"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg><p style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: clamp(22px, 2vw, 32px); font-weight: 700; color: rgb(237, 237, 237); letter-spacing: -0.02em; line-height: 1; margin-bottom: 6px;">34%</p><p style="font-family: Inter, sans-serif; font-size: 13px; font-weight: 500; color: rgb(136, 136, 136); line-height: 1.3;">Taxa de Conversão</p><p style="font-family: Inter, sans-serif; font-size: 11px; font-weight: 400; color: rgb(85, 85, 85); margin-top: 2px;">+5pp vs anterior</p></div><div class="col-span-1 p-5 rounded-xl group cursor-default rupto-control-card" style="border: 1px solid rgba(47, 128, 237, 0.2); backdrop-filter: blur(16px); background: rgba(20, 10, 30, 0.4); transition: border-color 0.4s, box-shadow 0.4s, transform 0.4s; opacity: 1; transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square mb-3"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg><p style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: clamp(22px, 2vw, 32px); font-weight: 700; color: rgb(237, 237, 237); letter-spacing: -0.02em; line-height: 1; margin-bottom: 6px;">87</p><p style="font-family: Inter, sans-serif; font-size: 13px; font-weight: 500; color: rgb(136, 136, 136); line-height: 1.3;">Conversas Ativas</p><p style="font-family: Inter, sans-serif; font-size: 11px; font-weight: 400; color: rgb(85, 85, 85); margin-top: 2px;">agora</p></div><div class="col-span-1 p-5 rounded-xl group cursor-default rupto-control-card" style="border: 1px solid rgba(47, 128, 237, 0.2); backdrop-filter: blur(16px); background: rgba(20, 10, 30, 0.4); transition: border-color 0.4s, box-shadow 0.4s, transform 0.4s; opacity: 1; transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up mb-3"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg><p style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: clamp(22px, 2vw, 32px); font-weight: 700; color: rgb(237, 237, 237); letter-spacing: -0.02em; line-height: 1; margin-bottom: 6px;">+18%</p><p style="font-family: Inter, sans-serif; font-size: 13px; font-weight: 500; color: rgb(136, 136, 136); line-height: 1.3;">Evolução Semanal</p><p style="font-family: Inter, sans-serif; font-size: 11px; font-weight: 400; color: rgb(85, 85, 85); margin-top: 2px;">crescimento</p></div><div class="col-span-1 md:col-span-2 p-5 rounded-xl group cursor-default rupto-control-card" style="border: 1px solid rgba(47, 128, 237, 0.2); backdrop-filter: blur(16px); background: rgba(20, 10, 30, 0.4); transition: border-color 0.4s, box-shadow 0.4s, transform 0.4s; opacity: 1; transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rotate-ccw mb-3"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg><p style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: clamp(22px, 2vw, 32px); font-weight: 700; color: rgb(237, 237, 237); letter-spacing: -0.02em; line-height: 1; margin-bottom: 6px;">12</p><p style="font-family: Inter, sans-serif; font-size: 13px; font-weight: 500; color: rgb(136, 136, 136); line-height: 1.3;">Follow-ups Pendentes</p><p style="font-family: Inter, sans-serif; font-size: 11px; font-weight: 400; color: rgb(85, 85, 85); margin-top: 2px;">aguardando</p></div></div><div class="max-w-xl mx-auto p-6 rounded-2xl rupto-control-card" style="border: 1px solid rgba(47, 128, 237, 0.2); backdrop-filter: blur(16px); background: rgba(20, 10, 30, 0.4); opacity: 1; transform: none;"><div class="flex items-center justify-between mb-5"><p style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 500; color: rgb(102, 102, 102);">Leads Qualificados, 10 dias</p><span class="px-2.5 py-1 rounded-full" style="border: 1px solid rgba(47, 128, 237, 0.2); font-size: 11px; font-weight: 600; color: rgb(237, 237, 237); font-family: Inter, sans-serif;">+143%</span></div><div class="relative"><svg viewBox="0 0 400 120" class="w-full" preserveAspectRatio="none" style="height: 120px;"><defs><linearGradient id="dashAreaGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="rgba(255,255,255,0.04)"></stop><stop offset="100%" stop-color="rgba(255,255,255,0)"></stop></linearGradient></defs><path d="M 24 96 L 63.11111111111111 84.54545454545455 L 102.22222222222221 73.0909090909091 L 141.33333333333331 79.63636363636364 L 180.44444444444443 51.81818181818182 L 219.55555555555557 63.27272727272727 L 258.66666666666663 40.36363636363637 L 297.77777777777777 46.909090909090914 L 336.88888888888886 24 L 376 30.545454545454547 L 376 120 L 24 120 Z" fill="url(#dashAreaGrad)"></path><path d="M 24 96 L 63.11111111111111 84.54545454545455 L 102.22222222222221 73.0909090909091 L 141.33333333333331 79.63636363636364 L 180.44444444444443 51.81818181818182 L 219.55555555555557 63.27272727272727 L 258.66666666666663 40.36363636363637 L 297.77777777777777 46.909090909090914 L 336.88888888888886 24 L 376 30.545454545454547" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="24" cy="96" r="1.8" fill="rgba(255,255,255,0.15)" style="transition: r 0.2s, fill 0.2s;"></circle><circle cx="63.11111111111111" cy="84.54545454545455" r="1.8" fill="rgba(255,255,255,0.15)" style="transition: r 0.2s, fill 0.2s;"></circle><circle cx="102.22222222222221" cy="73.0909090909091" r="1.8" fill="rgba(255,255,255,0.15)" style="transition: r 0.2s, fill 0.2s;"></circle><circle cx="141.33333333333331" cy="79.63636363636364" r="1.8" fill="rgba(255,255,255,0.15)" style="transition: r 0.2s, fill 0.2s;"></circle><circle cx="180.44444444444443" cy="51.81818181818182" r="1.8" fill="rgba(255,255,255,0.15)" style="transition: r 0.2s, fill 0.2s;"></circle><circle cx="219.55555555555557" cy="63.27272727272727" r="1.8" fill="rgba(255,255,255,0.15)" style="transition: r 0.2s, fill 0.2s;"></circle><circle cx="258.66666666666663" cy="40.36363636363637" r="1.8" fill="rgba(255,255,255,0.15)" style="transition: r 0.2s, fill 0.2s;"></circle><circle cx="297.77777777777777" cy="46.909090909090914" r="1.8" fill="rgba(255,255,255,0.15)" style="transition: r 0.2s, fill 0.2s;"></circle><circle cx="336.88888888888886" cy="24" r="1.8" fill="rgba(255,255,255,0.15)" style="transition: r 0.2s, fill 0.2s;"></circle><circle cx="376" cy="30.545454545454547" r="1.8" fill="rgba(255,255,255,0.15)" style="transition: r 0.2s, fill 0.2s;"></circle></svg></div></div></section><section id="faq" class="px-6 md:px-[8vw] py-24 relative" aria-label="Perguntas frequentes sobre a Clicka"><div class="absolute pointer-events-none" style="left: 50%; top: 10%; transform: translateX(-50%); width: 60%; height: 50%; background: radial-gradient(60% 40% at 50% 20%, rgba(47, 128, 237, 0.05) 0%, transparent 70%);"></div><div class="max-w-3xl mx-auto relative z-10"><p class="mb-5" style="font-family: Inter, sans-serif; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; color: rgb(85, 85, 85); opacity: 1; transform: none;">perguntas frequentes</p><h2 class="mb-14" style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: clamp(26px, 3.5vw, 42px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; color: rgb(237, 237, 237); opacity: 1; transform: none;">Perguntas que empresários fazem <span class="rupto-accent">antes de agendar.</span></h2><div itemscope="" itemtype="https://schema.org/FAQPage"><div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question"><meta itemprop="name" content="O que vocês fazem exatamente?"><div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><meta itemprop="text" content="Entramos na sua empresa, mapeamos todos os processos com IA, identificamos qual gargalo está te custando mais dinheiro, e implementamos agentes de inteligência artificial sob medida para resolver, começando pelo mais crítico."></div><div class="border-b" style="border-color: rgba(255, 255, 255, 0.06); opacity: 1; transform: none;"><button class="w-full flex items-center justify-between gap-4 py-6 text-left cursor-pointer" aria-expanded="false" data-faq-toggle=""><h3 style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: clamp(15px, 1.4vw, 18px); font-weight: 600; color: rgb(237, 237, 237); letter-spacing: -0.01em; line-height: 1.3; transition: color 0.3s;">O que vocês fazem exatamente?</h3><div style="flex-shrink: 0;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down" style="color: rgb(26, 101, 201); transition: color 0.3s;"><path d="m6 9 6 6 6-6"></path></svg></div></button><div style="overflow: hidden; height: 0; opacity: 0;"><p class="pb-6" style="font-family: Inter, sans-serif; font-size: clamp(14px, 1.1vw, 16px); color: rgb(136, 136, 136); line-height: 1.7; max-width: 700px;">Entramos na sua operação comercial, identificamos onde você está perdendo venda e usamos IA pra resolver. Começando pelo gargalo que mais impacta seu faturamento.</p></div></div></div><div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question"><meta itemprop="name" content="Quanto tempo leva para ver resultado?"><div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><meta itemprop="text" content="A fase de diagnóstico dura entre 5 a 7 dias úteis. A implementação do primeiro agente de IA acontece nos 10 a 15 dias seguintes. Nossos clientes relatam impacto mensurável em até 30 dias."></div><div class="border-b" style="border-color: rgba(255, 255, 255, 0.06); opacity: 1; transform: none;"><button class="w-full flex items-center justify-between gap-4 py-6 text-left cursor-pointer" aria-expanded="false" data-faq-toggle=""><h3 style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: clamp(15px, 1.4vw, 18px); font-weight: 600; color: rgb(237, 237, 237); letter-spacing: -0.01em; line-height: 1.3; transition: color 0.3s;">Quanto tempo leva pra ver resultado?</h3><div style="flex-shrink: 0;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down" style="color: rgb(26, 101, 201); transition: color 0.3s;"><path d="m6 9 6 6 6-6"></path></svg></div></button><div style="overflow: hidden; height: 0; opacity: 0;"><p class="pb-6" style="font-family: Inter, sans-serif; font-size: clamp(14px, 1.1vw, 16px); color: rgb(136, 136, 136); line-height: 1.7; max-width: 700px;">O diagnóstico leva de 5 a 7 dias úteis. A implementação do primeiro sistema acontece nos 10 a 15 dias seguintes. O tempo até o primeiro resultado depende da complexidade da operação e do gargalo identificado.</p></div></div></div><div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question"><meta itemprop="name" content="Funciona para o meu tipo de empresa?"><div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><meta itemprop="text" content="Se a sua empresa tem processos que consomem tempo de pessoas, atendimento, follow-up, qualificação, agendamento, gestão, funciona. Já implementamos em clínicas, construtoras, escritórios, e-commerces e dezenas de outros segmentos."></div><div class="border-b" style="border-color: rgba(255, 255, 255, 0.06); opacity: 1; transform: none;"><button class="w-full flex items-center justify-between gap-4 py-6 text-left cursor-pointer" aria-expanded="false" data-faq-toggle=""><h3 style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: clamp(15px, 1.4vw, 18px); font-weight: 600; color: rgb(237, 237, 237); letter-spacing: -0.01em; line-height: 1.3; transition: color 0.3s;">Funciona pro meu tipo de empresa?</h3><div style="flex-shrink: 0;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down" style="color: rgb(26, 101, 201); transition: color 0.3s;"><path d="m6 9 6 6 6-6"></path></svg></div></button><div style="overflow: hidden; height: 0; opacity: 0;"><p class="pb-6" style="font-family: Inter, sans-serif; font-size: clamp(14px, 1.1vw, 16px); color: rgb(136, 136, 136); line-height: 1.7; max-width: 700px;">Se sua empresa tem processos de atendimento, qualificação, follow-up ou agendamento que dependem de pessoas pra funcionar, o diagnóstico vai mostrar exatamente onde a IA faz diferença pra você.</p></div></div></div><div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question"><meta itemprop="name" content="Qual a diferença de vocês para um chatbot ou ferramenta de IA?"><div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><meta itemprop="text" content="A maioria das ferramentas de IA é genérica, não conhece sua operação, seus dados, suas dores. Nós fazemos um diagnóstico completo antes de implementar qualquer coisa. É a diferença entre tomar um remédio aleatório e ir ao médico primeiro."></div><div class="border-b" style="border-color: rgba(255, 255, 255, 0.06); opacity: 1; transform: none;"><button class="w-full flex items-center justify-between gap-4 py-6 text-left cursor-pointer" aria-expanded="false" data-faq-toggle=""><h3 style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: clamp(15px, 1.4vw, 18px); font-weight: 600; color: rgb(237, 237, 237); letter-spacing: -0.01em; line-height: 1.3; transition: color 0.3s;">Qual a diferença de vocês pra um chatbot ou ferramenta de IA?</h3><div style="flex-shrink: 0;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down" style="color: rgb(26, 101, 201); transition: color 0.3s;"><path d="m6 9 6 6 6-6"></path></svg></div></button><div style="overflow: hidden; height: 0; opacity: 0;"><p class="pb-6" style="font-family: Inter, sans-serif; font-size: clamp(14px, 1.1vw, 16px); color: rgb(136, 136, 136); line-height: 1.7; max-width: 700px;">A maioria das ferramentas é genérica e não conhece sua operação. A gente faz o diagnóstico antes de implementar qualquer coisa. É a diferença entre tomar um remédio aleatório e ir ao médico primeiro.</p></div></div></div><div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question"><meta itemprop="name" content="Meu problema é muito específico. Vocês conseguem resolver?"><div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><meta itemprop="text" content="Essa é justamente a razão pela qual fazemos o diagnóstico antes. Não vendemos solução pronta, mapeamos o SEU problema e construímos a solução sob medida para ele."></div><div class="border-b" style="border-color: rgba(255, 255, 255, 0.06); opacity: 1; transform: none;"><button class="w-full flex items-center justify-between gap-4 py-6 text-left cursor-pointer" aria-expanded="false" data-faq-toggle=""><h3 style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: clamp(15px, 1.4vw, 18px); font-weight: 600; color: rgb(237, 237, 237); letter-spacing: -0.01em; line-height: 1.3; transition: color 0.3s;">Meu problema é muito específico. Vocês conseguem resolver?</h3><div style="flex-shrink: 0;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down" style="color: rgb(26, 101, 201); transition: color 0.3s;"><path d="m6 9 6 6 6-6"></path></svg></div></button><div style="overflow: hidden; height: 0; opacity: 0;"><p class="pb-6" style="font-family: Inter, sans-serif; font-size: clamp(14px, 1.1vw, 16px); color: rgb(136, 136, 136); line-height: 1.7; max-width: 700px;">Essa é justamente a razão do diagnóstico. Não vendemos solução pronta. Mapeamos seu problema e construímos sob medida pra ele.</p></div></div></div><div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question"><meta itemprop="name" content="Qual o investimento?"><div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><meta itemprop="text" content="Depende da complexidade da sua operação. O diagnóstico inicial tem investimento de R$197 e nele você já recebe clareza sobre o gargalo principal. A partir daí, montamos uma proposta sob medida. Agende uma conversa para entender melhor."></div><div class="border-b" style="border-color: rgba(255, 255, 255, 0.06); opacity: 1; transform: none;"><button class="w-full flex items-center justify-between gap-4 py-6 text-left cursor-pointer" aria-expanded="false" data-faq-toggle=""><h3 style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: clamp(15px, 1.4vw, 18px); font-weight: 600; color: rgb(237, 237, 237); letter-spacing: -0.01em; line-height: 1.3; transition: color 0.3s;">Quanto custa?</h3><div style="flex-shrink: 0;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down" style="color: rgb(26, 101, 201); transition: color 0.3s;"><path d="m6 9 6 6 6-6"></path></svg></div></button><div style="overflow: hidden; height: 0; opacity: 0;"><p class="pb-6" style="font-family: Inter, sans-serif; font-size: clamp(14px, 1.1vw, 16px); color: rgb(136, 136, 136); line-height: 1.7; max-width: 700px;">O diagnóstico é gratuito. A partir do que ele revelar, montamos uma proposta sob medida pra sua operação. Agende uma conversa pra entender melhor.</p></div></div></div></div></div></section><section id="lp-form" class="px-6 md:px-[8vw] py-32 relative"><div class="max-w-xl mx-auto relative z-10" style="opacity: 1; transform: none;"><p class="text-center mb-4" style="font-family: Inter, sans-serif; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; color: rgb(85, 85, 85);">última chamada</p><h2 class="text-center mb-4" style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: clamp(28px, 4.5vw, 44px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; color: rgb(237, 237, 237);">Descubra o gargalo que está travando o <span style="background: linear-gradient(135deg, rgb(47, 128, 237), rgb(26, 101, 201), rgb(255, 255, 255)) text; -webkit-text-fill-color: transparent;">crescimento da sua empresa.</span></h2><p class="text-center mb-12 mx-auto" style="font-family: Inter, sans-serif; font-size: 14px; color: rgb(136, 136, 136); line-height: 1.65; max-width: 520px;">Cada dia que esse gargalo continua ativo, ele drena dinheiro, tempo e energia do seu time. Você não precisa de mais ferramenta, precisa de clareza sobre onde atacar primeiro.</p><div class="text-center mt-8"></div></div><div id="my-cal-inline-site" class="cal-inline-container"></div></section><footer class="px-6 md:px-[8vw] py-14" style="border-top: 1px solid rgba(255, 255, 255, 0.06);"><div class="flex flex-col md:flex-row md:items-start md:justify-between gap-8"><div><div class="flex items-center gap-2.5 mb-2"><img src="/assets/rupto-logo.svg" alt="Rupto AI" class="h-8 w-8 rounded-lg object-cover"><p style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-size: 18px; font-weight: 700; color: rgb(237, 237, 237); letter-spacing: -0.02em;">Rupto AI</p></div><p style="font-family: Inter, sans-serif; font-size: 12px; color: rgb(68, 68, 68); margin-bottom: 6px;">IA aplicada a vendas e crescimento.</p><div class="flex items-center gap-4"><a href="https://www.linkedin.com/company/ruptoai/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn da Clicka" class="inline-flex items-center gap-2" style="color: rgb(85, 85, 85); font-family: Inter, sans-serif; font-size: 12px; text-decoration: none; transition: color 0.3s;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>LinkedIn</a></div></div><div class="text-right"><p style="font-family: Inter, sans-serif; font-size: 11px; color: rgb(51, 51, 51);">© 2026 Rupto AI · Todos os direitos reservados</p><p style="font-family: Inter, sans-serif; font-size: 11px; color: rgb(34, 34, 34); margin-top: 4px;">Termos de Uso · Política de Privacidade</p></div></div></footer></div><div class="fixed inset-0 z-50 flex flex-col items-center justify-center gap-5" style="background: rgba(5, 5, 5, 0.98); opacity: 1;; display: none;" id="mobile-menu"><button class="absolute top-10 right-6 bg-transparent border-none cursor-pointer" data-mobile-menu-close=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button><img src="/assets/rupto-logo.svg" alt="Rupto AI" class="h-14 w-auto object-contain mb-4"><button class="border-none cursor-pointer" style="padding: 12px 36px; border-radius: 9999px; background: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: Inter, sans-serif; font-weight: 500; font-size: 15px;" data-scroll-lp="">Diagnóstico Gratuito</button><a href="https://www.linkedin.com/company/ruptoai/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 mt-4" aria-label="LinkedIn da Rupto AI" style="color: rgb(136, 136, 136); font-family: Inter, sans-serif; font-size: 13px; text-decoration: none;"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.34 3.1A2.16 2.16 0 1 1 5.34 7.42 2.16 2.16 0 0 1 5.34 3.1ZM3.47 8.86h3.74V20.9H3.47V8.86ZM9.55 8.86h3.58v1.65h.05c.5-.95 1.72-1.95 3.54-1.95 3.78 0 4.48 2.49 4.48 5.73v6.61h-3.73v-5.86c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1v5.96H9.55V8.86Z"></path></svg><span style="margin-left:6px">LinkedIn</span></a></div></div>
 
 
-    <script src="js/rupto-copy.js?v=11" charset="UTF-8"></script>
+    
 
     <script type="text/javascript">
       (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
@@ -678,29 +348,12 @@
       Cal.config.forwardQueryParams = true;
 
       function mountCal() {
-        const section = document.getElementById("lp-form");
-        if (!section || document.getElementById("my-cal-inline-site")) return;
-
-        section.querySelectorAll("form, .solo-calendar-owner, .mb-3").forEach(function(el) {
-          let node = el;
-          while (node.parentElement && node.parentElement !== section && node.parentElement.children.length === 1) {
-            node = node.parentElement;
-          }
-          node.remove();
-        });
-
-        Array.from(section.querySelectorAll("*")).forEach(function(el) {
-          if (el.children.length === 0 && /Reunião de 30 min|Você sai com clareza/i.test(el.textContent)) {
-            el.closest("p, span, div") && el.closest("p, span, div").remove();
-          }
-        });
-
-        const div = document.createElement("div");
-        div.id = "my-cal-inline-site";
-        section.appendChild(div);
+        const target = document.getElementById("my-cal-inline-site");
+        if (!target || target.dataset.mounted === "true") return;
+        target.dataset.mounted = "true";
         Cal.ns.site("inline", {
           elementOrSelector: "#my-cal-inline-site",
-          config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+          config: { "layout": "month_view", "useSlotsViewOnSmallScreen": "true" },
           calLink: "whojuliooliveira/site",
         });
         Cal.ns.site("ui", {
@@ -717,9 +370,50 @@
       }
 
       if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", function() { setTimeout(mountCal, 300); });
+        document.addEventListener("DOMContentLoaded", function () { setTimeout(mountCal, 300); });
       } else {
         setTimeout(mountCal, 300);
       }
-    </script>
+
+      function scrollToForm() {
+        document.getElementById("lp-form")?.scrollIntoView({ behavior: "smooth" });
+      }
+      document.querySelectorAll("[data-scroll-lp]").forEach(function (button) {
+        button.addEventListener("click", scrollToForm);
+      });
+
+      const mobileMenu = document.getElementById("mobile-menu");
+      document.querySelectorAll("[data-mobile-menu-open]").forEach(function (button) {
+        button.addEventListener("click", function () {
+          if (mobileMenu) mobileMenu.style.display = "flex";
+        });
+      });
+      document.querySelectorAll("[data-mobile-menu-close]").forEach(function (button) {
+        button.addEventListener("click", function () {
+          if (mobileMenu) mobileMenu.style.display = "none";
+        });
+      });
+      if (mobileMenu) {
+        mobileMenu.querySelectorAll("[data-scroll-lp]").forEach(function (button) {
+          button.addEventListener("click", function () { mobileMenu.style.display = "none"; });
+        });
+      }
+
+      document.querySelectorAll("[data-faq-toggle]").forEach(function (button) {
+        button.addEventListener("click", function () {
+          const panel = button.nextElementSibling;
+          const chevronWrap = button.querySelector(":scope > div:last-child");
+          const isOpen = button.getAttribute("aria-expanded") === "true";
+          button.setAttribute("aria-expanded", String(!isOpen));
+          if (panel) {
+            panel.style.height = isOpen ? "0" : "auto";
+            panel.style.opacity = isOpen ? "0" : "1";
+          }
+          if (chevronWrap) {
+            chevronWrap.style.transform = isOpen ? "rotate(0deg)" : "rotate(180deg)";
+          }
+        });
+      });
+</script>
+
 </body></html>
