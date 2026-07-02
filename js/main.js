@@ -7,6 +7,13 @@
     if (!toggle || !panel) return;
     toggle.addEventListener("click", function () {
       panel.classList.toggle("open");
+      toggle.classList.toggle("open");
+    });
+    panel.querySelectorAll("a, button").forEach((el) => {
+      el.addEventListener("click", function () {
+        panel.classList.remove("open");
+        toggle.classList.remove("open");
+      });
     });
   }
 
@@ -28,6 +35,82 @@
       { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
     );
     items.forEach((el) => observer.observe(el));
+  }
+
+  function initStepsTimeline() {
+    const timeline = document.querySelector("[data-steps-timeline]");
+    if (!timeline) return;
+
+    const track = timeline.querySelector(".steps-track");
+    const steps = Array.from(timeline.querySelectorAll(".step"));
+    const nextSection = document.querySelector('[data-rupto-section="market"]');
+    if (!track || steps.length === 0 || !nextSection) return;
+
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (reducedMotion) {
+      timeline.style.setProperty("--timeline-progress", "1");
+      steps.forEach((step) => step.classList.add("is-active"));
+      return;
+    }
+
+    let animationFrame = null;
+
+    function updateTimeline() {
+      animationFrame = null;
+
+      const trackRect = track.getBoundingClientRect();
+      const lineY = Math.min(
+        window.innerHeight * 0.94,
+        window.innerHeight - 24
+      );
+      const scrollPosition = window.scrollY;
+      const trackTop = trackRect.top + scrollPosition;
+      const nextSectionTop =
+        nextSection.getBoundingClientRect().top + scrollPosition;
+      const startScroll = trackTop - lineY;
+      const completionY = window.innerHeight * 0.18;
+      const endScroll = nextSectionTop - completionY;
+      const progress = Math.max(
+        0,
+        Math.min(
+          1,
+          (scrollPosition - startScroll) /
+            Math.max(1, endScroll - startScroll)
+        )
+      );
+      const activationY =
+        trackRect.top + trackRect.height * progress + 80;
+
+      timeline.style.setProperty("--timeline-progress", progress.toFixed(4));
+
+      steps.forEach((step, index) => {
+        const icon = step.querySelector(".step-icon");
+        if (!icon) return;
+        const iconRect = icon.getBoundingClientRect();
+        const iconCenter = iconRect.top + iconRect.height / 2;
+        step.classList.toggle(
+          "is-active",
+          index === 0 || iconCenter <= activationY
+        );
+      });
+    }
+
+    function requestTimelineUpdate() {
+      if (animationFrame !== null) return;
+      animationFrame = window.requestAnimationFrame(updateTimeline);
+    }
+
+    window.addEventListener("scroll", requestTimelineUpdate, {
+      passive: true,
+    });
+    window.addEventListener("touchmove", requestTimelineUpdate, {
+      passive: true,
+    });
+    window.addEventListener("resize", requestTimelineUpdate);
+    updateTimeline();
   }
 
   function initFaqAccordion() {
@@ -141,6 +224,7 @@
   function init() {
     initMobileMenu();
     initScrollReveal();
+    initStepsTimeline();
     initFaqAccordion();
     initCtaButtons();
     observeCalSection();

@@ -148,10 +148,10 @@
   <div class="page">
     <nav class="navbar">
       <div class="navbar-inner">
-        <div class="navbar-brand">
+        <a class="navbar-brand" href="#inicio" aria-label="Voltar ao início">
           <img src="assets/rupto-logo.svg" alt="Rupto AI" width="22" height="22">
           <span>Rupto AI</span>
-        </div>
+        </a>
         <div class="navbar-actions">
           <a class="navbar-social" href="https://www.linkedin.com/company/ruptoai/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn da Rupto AI">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.34 3.1A2.16 2.16 0 1 1 5.34 7.42 2.16 2.16 0 0 1 5.34 3.1ZM3.47 8.86h3.74V20.9H3.47V8.86ZM9.55 8.86h3.58v1.65h.05c.5-.95 1.72-1.95 3.54-1.95 3.78 0 4.48 2.49 4.48 5.73v6.61h-3.73v-5.86c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1v5.96H9.55V8.86Z"></path></svg>
@@ -159,24 +159,29 @@
           <button class="navbar-cta" type="button" data-scroll-lp>Diagnóstico Gratuito</button>
         </div>
         <button class="navbar-menu-btn" type="button" id="navbar-menu-toggle" aria-label="Abrir menu">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+          <svg class="navbar-menu-icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+          <svg class="navbar-menu-icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
       </div>
       <div class="navbar-mobile-panel" id="navbar-mobile-panel">
+        <img class="navbar-mobile-watermark" src="assets/rupto-logo.svg" alt="" width="120" height="120" aria-hidden="true">
+        <button class="navbar-cta" type="button" data-scroll-lp>Diagnóstico Gratuito</button>
         <a class="navbar-mobile-social" href="https://www.linkedin.com/company/ruptoai/" target="_blank" rel="noopener noreferrer">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.34 3.1A2.16 2.16 0 1 1 5.34 7.42 2.16 2.16 0 0 1 5.34 3.1ZM3.47 8.86h3.74V20.9H3.47V8.86ZM9.55 8.86h3.58v1.65h.05c.5-.95 1.72-1.95 3.54-1.95 3.78 0 4.48 2.49 4.48 5.73v6.61h-3.73v-5.86c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1v5.96H9.55V8.86Z"></path></svg>
           <span>LinkedIn</span>
         </a>
-        <button class="navbar-cta" type="button" data-scroll-lp>Diagnóstico Gratuito</button>
       </div>
     </nav>
 
     <main>
     <!-- Hero -->
-    <section class="hero-section" data-rupto-section="hero">
+    <section class="hero-section" id="inicio" data-rupto-section="hero">
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <source src="assets/video-header.mp4" type="video/mp4">
+      </video>
       <div class="hero-content">
         <p class="hero-eyebrow">DIAGNÓSTICO COMERCIAL · IA APLICADA A VENDAS E CRESCIMENTO</p>
-        <h1 class="hero-title">Sua empresa vende, mas <em>perde venda</em> todo dia por falta de estrutura.</h1>
+        <h1 class="hero-title"><strong>Sua empresa vende, mas</strong> <em>perde venda</em> todo dia por falta de estrutura.</h1>
         <p class="hero-copy">Identificamos onde sua operação comercial está perdendo venda e usamos IA pra resolver, começando pelo gargalo que mais custa dinheiro.</p>
         <button class="cta-btn" type="button" data-scroll-lp>Agendar Diagnóstico <span aria-hidden="true">↗</span></button>
         <p class="hero-support">Reunião de 30 min · Você sai sabendo exatamente onde está perdendo venda</p>
@@ -184,12 +189,19 @@
     </section>
 
     <!-- Problem -->
-    <section data-rupto-section="problem">
-      <p class="eyebrow reveal">o problema</p>
-      <h2 class="section-title reveal">A maioria das empresas implementa IA <span class="text-gradient">do jeito errado.</span></h2>
-      <p class="section-lead reveal">Compra um chatbot. Assina uma ferramenta nova. Automatiza um processo aleatório. E não muda nada.</p>
+    <section class="problem-section" data-rupto-section="problem">
+      <div class="problem-section-inner">
+        <div class="problem-intro">
+          <p class="eyebrow reveal">o problema</p>
+          <h2 class="section-title reveal">A maioria das empresas implementa <br class="problem-title-break">IA <span class="text-gradient-3 text-gradient-3--light">do jeito errado.</span></h2>
+          <div class="problem-narrative reveal">
+            <p>Compra um chatbot. Assina uma ferramenta nova. Automatiza um processo aleatório.<br class="problem-copy-break"> E não muda nada.</p>
+            <p>Sabe por quê?</p>
+            <p>Porque implementar IA sem saber onde está o problema de verdade é o mesmo que comprar um remédio sem saber qual é a doença.</p>
+          </div>
+        </div>
 
-      <div class="problem-cards">
+        <div class="problem-cards">
         <div class="problem-card liquid-glass-card reveal">
           <div class="problem-card-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
@@ -218,21 +230,27 @@
           <h3>Mais lead não é a resposta</h3>
           <p>Você acha que precisa de mais lead e mais tráfego. Mas o problema pode estar no atendimento, no follow-up, ou no funil que vaza silenciosamente toda semana.</p>
         </div>
+        </div>
+        <p class="problem-closing reveal">A verdade é: <strong>o gargalo que mais custa dinheiro quase nunca é o que você imagina.</strong></p>
       </div>
     </section>
 
     <!-- How it works -->
-    <section data-rupto-section="how-it-works">
-      <p class="eyebrow reveal">como funciona</p>
-      <h2 class="section-title reveal">Antes de implementar qualquer IA, a gente descobre onde sua empresa está <span class="text-gradient">perdendo venda.</span></h2>
-      <p class="section-lead reveal">Diagnóstico primeiro. Implementação depois. Assim cada real investido vai direto pra onde gera resultado.</p>
+    <section class="how-section" data-rupto-section="how-it-works">
+      <div class="how-intro">
+        <p class="eyebrow reveal">como funciona</p>
+        <h2 class="section-title reveal">Antes de implementar qualquer IA, a <br class="how-title-break">gente descobre onde sua empresa <br class="how-title-break">está <span class="text-gradient-3 text-gradient-3--light">perdendo venda.</span></h2>
+        <p class="section-lead reveal">Diagnóstico primeiro. Implementação depois. Assim cada real investido vai direto pra onde gera resultado.</p>
+      </div>
 
-      <div class="steps">
-        <div class="steps-track"></div>
+      <div class="steps" data-steps-timeline>
+        <div class="steps-track" aria-hidden="true">
+          <span class="steps-track-progress"></span>
+        </div>
 
-        <div class="step reveal">
+        <div class="step is-active">
           <div class="step-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
           </div>
           <div class="step-content">
             <span class="step-badge">Pilar 01</span>
@@ -241,7 +259,7 @@
           </div>
         </div>
 
-        <div class="step reveal">
+        <div class="step">
           <div class="step-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"></path><path d="M18 17V9M13 17V5M8 17v-3"></path></svg>
           </div>
@@ -252,7 +270,7 @@
           </div>
         </div>
 
-        <div class="step reveal">
+        <div class="step">
           <div class="step-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 1 0 10 10"></path><path d="M12 12l6-6"></path><path d="M17 3h5v5"></path></svg>
           </div>
@@ -268,7 +286,7 @@
     <!-- Market vs Rupto -->
     <section data-rupto-section="market">
       <p class="eyebrow reveal">mercado vs rupto</p>
-      <h2 class="section-title reveal">O mercado vende ferramenta. <span class="text-gradient-3">A Rupto implementa inteligência.</span></h2>
+      <h2 class="section-title reveal">O mercado vende ferramenta. <span class="text-gradient-3 text-gradient-3--light">A Rupto implementa inteligência.</span></h2>
 
       <div class="market-grid">
         <div class="market-card market-card--market reveal">
@@ -296,6 +314,8 @@
           </ul>
         </div>
       </div>
+
+      <p class="market-closing reveal">É como ir ao médico antes de comprar o remédio. <strong>O diagnóstico muda tudo.</strong></p>
     </section>
 
     <!-- Audience -->
@@ -303,57 +323,9 @@
       <div class="audience reveal">
         <p class="eyebrow">PARA QUEM É</p>
         <h2 class="section-title">Se sua empresa tem processos que consomem tempo de funcionários, tempo do dono e travam o crescimento, esse diagnóstico é pra você.</h2>
-        <p class="audience-copy">Empresas que já vendem e querem vender mais com o mesmo time. Operações que dependem de atendimento, follow-up, qualificação ou agendamento. Donos que estão na operação quando deveriam estar no estratégico.</p>
+        <p class="audience-copy">Empresas que já vendem e querem vender mais com o mesmo time. Operações que dependem de atendimento, follow-up, qualificação ou agendamento. Donos que estão na operação<br>quando deveriam estar no estratégico.</p>
         <button class="cta-btn" type="button" data-scroll-lp>Agendar Diagnóstico <span aria-hidden="true">↗</span></button>
         <p class="hero-support">Reunião de 30 min · Você sai com clareza sobre seu gargalo número 1</p>
-      </div>
-    </section>
-
-    <!-- Control panel -->
-    <section data-rupto-section="control">
-      <div class="panel-heading reveal">
-        <p class="eyebrow">seu controle total</p>
-        <h2>Cada métrica, cada lead. <span>Tudo num só painel.</span></h2>
-        <p>Visibilidade total sobre sua operação comercial em tempo real. Leads recebidos, qualificados, tempo de resposta, taxa de conversão, follow-ups pendentes. Você para de gerenciar no achismo e começa a decidir com dado.</p>
-      </div>
-
-      <div class="panel-grid">
-        <div class="rupto-control-card liquid-glass-card span-2 reveal">
-          <div class="metric-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></div>
-          <p class="metric-value">1.2k</p>
-          <p class="metric-title">Leads Recebidos vs Qualificados</p>
-          <p class="metric-sub">este mês</p>
-        </div>
-        <div class="rupto-control-card liquid-glass-card reveal">
-          <div class="metric-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg></div>
-          <p class="metric-value">&lt; 3s</p>
-          <p class="metric-title">Tempo Médio de Resposta</p>
-          <p class="metric-sub">últimas 24h</p>
-        </div>
-        <div class="rupto-control-card liquid-glass-card reveal">
-          <div class="metric-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg></div>
-          <p class="metric-value">34%</p>
-          <p class="metric-title">Taxa de Conversão</p>
-          <p class="metric-sub">+5pp vs anterior</p>
-        </div>
-        <div class="rupto-control-card liquid-glass-card reveal">
-          <div class="metric-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div>
-          <p class="metric-value">87</p>
-          <p class="metric-title">Conversas Ativas</p>
-          <p class="metric-sub">agora</p>
-        </div>
-        <div class="rupto-control-card liquid-glass-card reveal">
-          <div class="metric-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg></div>
-          <p class="metric-value">+18%</p>
-          <p class="metric-title">Evolução Semanal</p>
-          <p class="metric-sub">crescimento</p>
-        </div>
-        <div class="rupto-control-card liquid-glass-card span-2 reveal">
-          <div class="metric-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
-          <p class="metric-value">12</p>
-          <p class="metric-title">Follow-ups Pendentes</p>
-          <p class="metric-sub">aguardando</p>
-        </div>
       </div>
     </section>
 
@@ -361,7 +333,7 @@
     <section id="faq" aria-label="Perguntas frequentes sobre a Rupto AI">
       <div class="faq-list">
         <p class="eyebrow reveal">perguntas frequentes</p>
-        <h2 class="section-title reveal">Perguntas que empresários fazem <span class="text-gradient-3">antes de agendar.</span></h2>
+        <h2 class="section-title reveal">Perguntas que empresários fazem <span class="text-gradient-3 text-gradient-3--light">antes de agendar.</span></h2>
 
         <div itemscope itemtype="https://schema.org/FAQPage">
           <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -426,38 +398,27 @@
     <section id="lp-form">
       <div class="booking-section">
         <p class="eyebrow reveal">última chamada</p>
-        <h2 class="section-title reveal">Descubra o gargalo que está travando o <span class="text-gradient-3">crescimento da sua empresa.</span></h2>
+        <h2 class="section-title booking-title reveal">Descubra o gargalo que está<br>travando o <span class="text-gradient-3 text-gradient-3--light">crescimento da<br>sua empresa.</span></h2>
         <p class="section-lead reveal">Cada dia que esse gargalo continua ativo, ele drena dinheiro, tempo e energia do seu time. Você não precisa de mais ferramenta, precisa de clareza sobre onde atacar primeiro.</p>
-
-        <div class="testimonial-card reveal">
-          <div class="testimonial-header">
-            <img class="testimonial-avatar" src="assets/rupto-logo.svg" alt="Júlio Oliveira" width="48" height="48">
-            <div>
-              <p class="testimonial-name">Júlio Oliveira · Fundador Rupto AI</p>
-              <p class="testimonial-handle">@whojuliooliveira</p>
-            </div>
-          </div>
-        </div>
-
-        <p class="booking-support">Reunião de 30 min · Você sai com clareza sobre seu gargalo número 1</p>
-
-        <div id="my-cal-inline-site"></div>
       </div>
+
+      <div id="my-cal-inline-site"></div>
     </section>
     </main>
 
     <footer>
       <div class="footer-inner">
-        <div class="footer-brand">
-          <img src="assets/rupto-logo.svg" alt="Rupto AI" width="24" height="24">
-          <div class="footer-brand-text">
-            <p>IA aplicada a vendas e crescimento.</p>
+        <div class="footer-top">
+          <div class="footer-brand">
+            <img src="assets/rupto-logo.svg" alt="Rupto AI" width="24" height="24">
+            <span class="footer-brand-name">Rupto AI</span>
           </div>
+          <p class="footer-copy">© 2026 Rupto AI · Todos os direitos reservados</p>
         </div>
+        <p class="footer-desc">IA aplicada a vendas e crescimento.</p>
         <div class="footer-links">
           <a href="https://www.linkedin.com/company/ruptoai/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
-        <p class="footer-copy">© 2026 Rupto AI · Todos os direitos reservados</p>
       </div>
     </footer>
   </div>
